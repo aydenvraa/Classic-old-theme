@@ -1,85 +1,72 @@
 /**
  * @name ForestClassic
  * @author king
- * @version 1.2.0
- * @description old discord colors + spacing
+ * @version 1.3.0
+ * @description old discord colors + classic spacing
  * @source https://github.com/aydenvraa/Classic-old-theme
  */
 
-
 :root {
     --forest:#515949;
-    --forest-dark:#3d4336;
-    --forest-side:#474e3f;
-    --forest-panel:#43493b;
+    --forest2:#474e3f;
+    --dark:#3d4336;
+    --panel:#43493b;
 
     --line:#69705f;
-
-    --hover:rgba(255,255,255,.045);
-    --selected:rgba(255,255,255,.08);
-
     --gold:#9b9038;
-    --gold-hover:#b2a347;
 
-    --text:#ececdf;
+    --txt:#ececdf;
     --muted:#b6b8aa;
-    --quiet:#91967f;
-
-    --online:#5cd967;
-    --idle:#d7b24c;
-    --danger:#d46464;
-}
-
-
-/* font stays close to old discord */
-
-* {
-    font-family:Whitney,"Helvetica Neue",Arial,sans-serif!important;
-}
-
-
-/* flatten some newer UI changes */
-
-* {
-    box-shadow:none!important;
 }
 
 
 /* base */
 
-body {
-    background:var(--forest)!important;
+* {
+    font-family:Whitney,"Helvetica Neue",Arial,sans-serif!important;
 }
 
+body {
+    background:#515949!important;
+}
 
 .appMount__51fd7,
 .layers__960e4 {
-    background:var(--forest)!important;
+    background:#515949!important;
 }
 
 
-/* Discord changed this area a few times */
+/* discord keeps changing these */
 
 .base_c48ade {
-    background:var(--forest)!important;
+    background:#515949!important;
 }
 
 
-/* left server rail */
+/* kill some newer rounded stuff */
+
+button,
+[class*="button"],
+[class*="container"] {
+    border-radius:2px!important;
+}
+
+
+/* guilds */
 
 .guilds_c48ade {
-    background:var(--forest-dark)!important;
-    border-right:1px solid var(--line);
+    background:#3d4336!important;
+    border-right:1px solid #69705f;
 }
 
 
 .scroller_ef3116 {
-    padding-top:10px;
+    padding-top:8px;
 }
 
 
 .listItem__650eb {
-    margin-bottom:10px;
+    margin-bottom:8px;
 }
 
 
@@ -94,37 +81,37 @@ body {
 }
 
 
-/* keep icons from doing modern zoom effects */
+/* don't do the modern zoom */
 
 .wrapper_cc5dd2:hover {
     transform:none!important;
 }
 
 
-/* add server button */
+/* add server */
 
 .circleIconButton__5bc7e {
-    background:var(--forest-panel)!important;
-    border:1px solid var(--line)!important;
-    color:var(--muted)!important;
+    background:#43493b!important;
+    color:#b6b8aa!important;
+    border:1px solid #69705f!important;
 }
 
 
 .circleIconButton__5bc7e:hover {
-    background:var(--gold)!important;
+    background:#9b9038!important;
     color:white!important;
 }
 
 
-/* global text */
+/* text */
 
 .colorStandard__5345c {
-    color:var(--text)!important;
+    color:#ececdf!important;
 }
 
 
 .colorMuted__5345c {
-    color:var(--muted)!important;
+    color:#b6b8aa!important;
 }
 
 
@@ -134,21 +121,20 @@ body {
 .wrapper__44b0c img {
     border-radius:3px!important;
 }
-/* channel area */
+/* sidebar */
 
 .sidebar__23e6b {
-    background:var(--forest-side)!important;
-    border-right:1px solid var(--line);
+    background:#474e3f!important;
+    border-right:1px solid #69705f;
 }
 
 
-/* channel categories */
+/* categories */
 
 .mainContent__29444 {
     color:#d5d7c6!important;
     font-size:12px;
     font-weight:700;
-    letter-spacing:.4px;
 }
 
 
@@ -167,12 +153,12 @@ body {
 
 
 .link__2ea32:hover {
-    background:var(--hover)!important;
+    background:rgba(255,255,255,.04)!important;
 }
 
 
 .modeSelected__2ea32 .link__2ea32 {
-    background:var(--gold)!important;
+    background:#9b9038!important;
     color:white!important;
 }
 
@@ -183,58 +169,60 @@ body {
 
 
 .icon__2ea32 {
-    color:var(--muted)!important;
+    color:#b6b8aa!important;
 }
 
 
-/* unread channel marker */
+/* unread */
 
 .unread__2ea32 {
-    background:var(--gold)!important;
+    background:#9b9038!important;
     width:3px!important;
 }
 
 
-/* top bar */
+/* header */
 
 .header_f37cb1,
 .title_f75fb0 {
     background:#505848!important;
-    border-bottom:1px solid var(--line);
+    border-bottom:1px solid #69705f;
 }
 
 
+/* channel topic */
+
 .topic__6ec1a {
-    color:var(--quiet)!important;
+    color:#91967f!important;
 }
 
 
 /* search */
 
 .searchBar__35e86 {
-    background:var(--forest-dark)!important;
-    border:1px solid var(--line)!important;
+    background:#3d4336!important;
+    border:1px solid #69705f!important;
 }
 
 
 .searchBar__35e86 input {
-    color:var(--text)!important;
+    color:#ececdf!important;
 }
 
 
-/* chat background */
+/* chat */
 
 .chat_f75fb0,
 .chatContent_f75fb0 {
-    background:var(--forest)!important;
+    background:#515949!important;
 }
 
 
-/* member list */
+/* right side */
 
 .membersWrap_c8ffbb {
-    background:var(--forest-side)!important;
-    border-left:1px solid var(--line);
+    background:#474e3f!important;
+    border-left:1px solid #69705f;
 }
 
 
@@ -243,11 +231,11 @@ body {
 }
 
 
-/* user panel */
+/* user controls */
 
 .panels_c48ade {
-    background:var(--forest-panel)!important;
-    border-top:1px solid var(--line);
+    background:#43493b!important;
+    border-top:1px solid #69705f;
 }
 
 
@@ -257,11 +245,11 @@ body {
 
 
 .container__37e49:hover {
-    background:var(--hover)!important;
+    background:rgba(255,255,255,.04)!important;
 }
 
 
-/* panel buttons */
+/* buttons down there */
 
 .button__67645 {
     width:32px;
@@ -270,24 +258,17 @@ body {
 
 
 .button__67645:hover {
-    background:var(--hover)!important;
+    background:rgba(255,255,255,.05)!important;
 }
 
 
-/* voice area */
+/* voice */
 
 .wrapper__0d616 {
-    background:var(--forest-side)!important;
-    border-top:1px solid var(--line);
+    background:#474e3f!important;
+    border-top:1px solid #69705f;
 }
 
-
-.connection__0d616 {
-    background:transparent!important;
-}
-
-
-/* voice channel states */
 
 .modeConnected__2ea32 .link__2ea32 {
     background:rgba(92,217,103,.16)!important;
@@ -295,12 +276,12 @@ body {
 
 
 .modeConnected__2ea32 .icon__2ea32 {
-    color:var(--online)!important;
+    color:#5cd967!important;
 }
 
 
 .modeMuted__2ea32 {
-    opacity:.65;
+    opacity:.7;
 }
 
 
@@ -309,18 +290,14 @@ body {
 }
 
 
-/* old style thin borders */
+/* little border fixes */
 
 .header_f37cb1,
-.panels_c48ade,
 .membersWrap_c8ffbb,
-.wrapper__0d616 {
-    border-color:var(--line)!important;
+.panels_c48ade {
+    border-color:#69705f!important;
 }
 /* messages */
-
-
-/* old discord spacing */
 
 .message__5126c {
     padding:3px 18px;
@@ -338,31 +315,31 @@ body {
 }
 
 
-/* usernames */
+/* names */
 
 .username_f9f2ca {
-    color:var(--text)!important;
+    color:#ececdf!important;
     font-size:15px;
     font-weight:600;
 }
 
 
 .timestamp_c19a55 {
-    color:var(--quiet)!important;
+    color:#91967f!important;
     font-size:11px;
 }
 
 
-/* message content */
+/* text */
 
 .markup_a7e664 {
-    color:var(--text)!important;
+    color:#ececdf!important;
     line-height:1.4;
 }
 
 
 .markup_a7e664 strong {
-    color:#ffffff!important;
+    color:white!important;
 }
 
 
@@ -381,16 +358,119 @@ body {
 /* edited */
 
 .edited_c19a55 {
-    color:var(--quiet)!important;
+    color:#91967f!important;
 }
 
 
-/* bot tag */
+/* bot label */
 
 .botTagRegular_c89c9a {
-    background:var(--gold)!important;
-    color:white!important;
+    background:#9b9038!important;
     border-radius:2px!important;
+}
+
+
+/* replies */
+
+.replyBar__841c8 {
+    background:#43493b!important;
+    border-bottom:1px solid #69705f;
+}
+
+
+.repliedMessage_e2bf4a:before {
+    border-color:#69705f!important;
+}
+
+
+/* input */
+
+.form_f75fb0 {
+    background:#474e3f!important;
+    border-top:1px solid #69705f;
+}
+
+
+.channelTextArea_f75fb0 {
+    background:transparent!important;
+}
+
+
+.scrollableContainer__74017 {
+    background:#46503d!important;
+    border:1px solid #69705f!important;
+}
+
+
+.editor__1b31f {
+    color:#ececdf!important;
+}
+
+
+.placeholder__1b31f {
+    color:#91967f!important;
+}
+
+
+/* input buttons */
+
+.attachButton__0923f,
+.buttonContainer_e6e74f button {
+    color:#b6b8aa!important;
+}
+
+
+.attachButton__0923f:hover,
+.buttonContainer_e6e74f button:hover {
+    color:white!important;
+}
+
+
+/* embeds */
+
+.embedFull__623de {
+    background:#474e3f!important;
+    border:1px solid #69705f!important;
+}
+
+
+.embedTitle__623de {
+    color:#ececdf!important;
+}
+
+
+.embedDescription__623de {
+    color:#b6b8aa!important;
+}
+
+
+/* files */
+
+.attachment__06ca5,
+.fileWrapper__0ccae {
+    background:#474e3f!important;
+    border:1px solid #69705f!important;
+}
+
+
+.imageWrapper_af017a {
+    border:1px solid #69705f!important;
+}
+
+
+/* code */
+
+code,
+pre {
+    background:#383d32!important;
+    border:1px solid #69705f!important;
+}
+
+
+/* quotes */
+
+.blockquoteContainer__75297 {
+    border-left:3px solid #9b9038!important;
 }
 
 
@@ -407,133 +487,22 @@ body {
 }
 
 
-/* reply bar */
-
-.replyBar__841c8 {
-    background:var(--forest-panel)!important;
-    border-bottom:1px solid var(--line);
-}
-
-
-.repliedMessage_e2bf4a:before {
-    border-color:var(--line)!important;
-}
-
-
-/* input */
-
-.form_f75fb0 {
-    background:var(--forest-side)!important;
-    border-top:1px solid var(--line);
-}
-
-
-.channelTextArea_f75fb0 {
-    background:transparent!important;
-}
-
-
-.scrollableContainer__74017 {
-    background:#46503d!important;
-    border:1px solid var(--line)!important;
-    min-height:44px;
-}
-
-
-.editor__1b31f {
-    color:var(--text)!important;
-}
-
-
-.placeholder__1b31f {
-    color:var(--quiet)!important;
-}
-
-
-/* input icons */
-
-.attachButton__0923f,
-.buttonContainer_e6e74f button {
-    color:var(--muted)!important;
-}
-
-
-.attachButton__0923f:hover,
-.buttonContainer_e6e74f button:hover {
-    color:white!important;
-}
-
-
-/* embeds */
-
-.embedFull__623de {
-    background:var(--forest-side)!important;
-    border:1px solid var(--line)!important;
-}
-
-
-.embedTitle__623de {
-    color:var(--text)!important;
-}
-
-
-.embedDescription__623de {
-    color:var(--muted)!important;
-}
-
-
-/* attachments */
-
-.attachment__06ca5,
-.fileWrapper__0ccae {
-    background:var(--forest-side)!important;
-    border:1px solid var(--line)!important;
-}
-
-
-.imageWrapper_af017a {
-    border:1px solid var(--line)!important;
-}
-
-
-/* code blocks */
-
-code {
-    background:#383d32!important;
-    border:1px solid var(--line);
-}
-
-
-pre {
-    background:#383d32!important;
-    border:1px solid var(--line)!important;
-}
-
-
-/* block quotes */
-
-.blockquoteContainer__75297 {
-    border-left:3px solid var(--gold)!important;
-}
-
-
 /* reactions */
 
 .reaction__23977 {
-    background:var(--forest-side)!important;
-    border:1px solid var(--line)!important;
-    border-radius:2px!important;
+    background:#474e3f!important;
+    border:1px solid #69705f!important;
 }
 
 
 .reaction__23977:hover {
-    background:var(--hover)!important;
+    background:rgba(255,255,255,.05)!important;
 }
 
 
 .reactionMe__23977 {
     background:#5b623e!important;
-    border-color:var(--gold)!important;
+    border-color:#9b9038!important;
 }
 
 
@@ -549,47 +518,29 @@ pre {
 }
 
 
-/* date divider */
-
-.divider__5126c {
-    border-color:rgba(255,255,255,.08)!important;
-}
-
-
-.content__908e2 {
-    background:var(--forest)!important;
-    color:var(--muted)!important;
-}
-
-
 /* typing */
 
 .typing_b88801 {
-    background:var(--forest-side)!important;
-    border-top:1px solid var(--line);
+    background:#474e3f!important;
+    border-top:1px solid #69705f;
 }
 
 
-/* jump/new messages */
+/* new messages */
 
 .newMessagesBar__0f481 {
-    background:var(--gold)!important;
-    border-radius:0!important;
+    background:#9b9038!important;
 }
 
 
 .barButtonAlt__0f481 {
-    background:var(--forest-panel)!important;
-    border:1px solid var(--line);
-}
-/* members */
-
-
-/* member list */
+    background:#43493b!important;
+    border:1px solid #69705f;
+}/* members */
 
 .membersGroup_c8ffbb {
     padding:16px 8px 6px;
-    color:var(--quiet)!important;
+    color:#91967f!important;
     font-size:11px;
     font-weight:700;
     text-transform:uppercase;
@@ -603,12 +554,12 @@ pre {
 
 
 .member_c8ffbb:hover {
-    background:var(--hover)!important;
+    background:rgba(255,255,255,.04)!important;
 }
 
 
 .selected__91a9d {
-    background:var(--selected)!important;
+    background:rgba(255,255,255,.08)!important;
 }
 
 
@@ -623,21 +574,21 @@ pre {
 
 
 .name__91a9d {
-    color:var(--text)!important;
+    color:#ececdf!important;
 }
 
 
 .activity__91a9d,
 .subText__91a9d {
-    color:var(--muted)!important;
+    color:#b6b8aa!important;
 }
 
 
 /* profile popup */
 
 .userPopoutOuter_c69a7b {
-    background:var(--forest-side)!important;
-    border:1px solid var(--line)!important;
+    background:#474e3f!important;
+    border:1px solid #69705f!important;
 }
 
 
@@ -657,12 +608,12 @@ pre {
 
 
 .nickname__63ed3 {
-    color:var(--text)!important;
+    color:#ececdf!important;
 }
 
 
 .usernameRow__63ed3 {
-    color:var(--muted)!important;
+    color:#b6b8aa!important;
 }
 
 
@@ -682,10 +633,9 @@ pre {
 
 .role_dfa8b6 {
     background:#505646!important;
-    border:1px solid var(--line)!important;
+    border:1px solid #69705f!important;
     border-radius:2px!important;
-
-    color:var(--text)!important;
+    color:#ececdf!important;
 
     padding:3px 8px;
     margin:3px;
@@ -697,68 +647,58 @@ pre {
 }
 
 
-/* activity cards */
+/* profile activity */
 
 .activity__5d473 {
-    background:var(--forest-panel)!important;
-    border:1px solid var(--line);
+    background:#43493b!important;
+    border:1px solid #69705f;
 }
 
 
 /* notes */
 
 .note__7e549 textarea {
-    background:var(--forest-dark)!important;
-    border:1px solid var(--line)!important;
-    color:var(--text)!important;
-}
-
-
-/* profile badges */
-
-.profileBadge__63ed3 {
-    filter:saturate(.85);
+    background:#3d4336!important;
+    border:1px solid #69705f!important;
+    color:#ececdf!important;
 }
 
 
 /* settings */
 
-
-/* Discord renamed these a few times */
-
 .standardSidebarView-E9Pc3j,
 .contentRegion-3HkfJJ {
-    background:var(--forest)!important;
+    background:#515949!important;
 }
 
 
 .sidebarRegionScroller-FzLwQ9 {
-    background:var(--forest-dark)!important;
+    background:#3d4336!important;
 }
 
 
 .sidebar-1tnWFu .item-3XjbnG {
-    color:var(--muted)!important;
+    color:#b6b8aa!important;
 }
 
 
 .sidebar-1tnWFu .item-3XjbnG:hover {
-    background:var(--hover)!important;
+    background:rgba(255,255,255,.04)!important;
 }
 
 
 .sidebar-1tnWFu .item-3XjbnG.selected-g-kMVV {
-    background:var(--selected)!important;
+    background:#30352a!important;
     color:#d9dfbd!important;
 }
 
 
-/* settings cards */
+/* cards */
 
 .cardPrimary-3qRT__,
 .card-16VQ8C {
-    background:var(--forest-panel)!important;
-    border:1px solid var(--line)!important;
+    background:#43493b!important;
+    border:1px solid #69705f!important;
 }
 
 
@@ -766,27 +706,27 @@ pre {
 
 .input-2g-os5,
 .textarea-2rYpWZ {
-    background:var(--forest-dark)!important;
-    border:1px solid var(--line)!important;
-    color:var(--text)!important;
+    background:#3d4336!important;
+    border:1px solid #69705f!important;
+    color:#ececdf!important;
 }
 
 
 /* menus */
 
 .menu-1QACrS {
-    background:var(--forest-dark)!important;
-    border:1px solid var(--line)!important;
+    background:#3d4336!important;
+    border:1px solid #69705f!important;
 }
 
 
 .item-1tOPte {
-    color:var(--text)!important;
+    color:#ececdf!important;
 }
 
 
 .item-1tOPte:hover {
-    background:var(--selected)!important;
+    background:#30352a!important;
 }
 
 
@@ -794,23 +734,128 @@ pre {
 
 .popout-2sKjHu,
 .container-2O1UgZ {
-    background:var(--forest-dark)!important;
-    border:1px solid var(--line)!important;
+    background:#3d4336!important;
+    border:1px solid #69705f!important;
 }
 
 
-/* emoji picker */
+/* emoji */
 
 .contentWrapper-SvZHNd {
-    background:var(--forest-dark)!important;
-    border:1px solid var(--line)!important;
+    background:#3d4336!important;
+    border:1px solid #69705f!important;
 }
 
 
 .emojiItem-277VFM:hover {
-    background:var(--selected)!important;
+    background:#30352a!important;
 }
-/* final touches */
+/* random fixes */
+
+/* discord changed these names a few times */
+.container-YkUktl {
+    background:#43493b!important;
+}
+
+
+.panels-3wFtMD {
+    background:#43493b!important;
+    border-top:1px solid #69705f;
+}
+
+
+.members-3WRCEx {
+    background:#474e3f!important;
+}
+
+
+/* old server icon behavior */
+
+.wrapper-3kah-n img {
+    border-radius:4px!important;
+}
+
+
+.wrapper-3kah-n foreignObject {
+    mask:none!important;
+}
+
+
+/* avatar cleanup */
+
+.avatar-2e8lTP,
+.avatar-1BDn8e,
+.avatar-3QF_VA {
+    border-radius:3px!important;
+}
+
+
+/* voice */
+
+.container-1giJp5 {
+    background:#474e3f!important;
+    border-top:1px solid #69705f;
+}
+
+
+.avatarSpeaking-2IGMRN {
+    box-shadow:0 0 0 2px #5cd967!important;
+}
+
+
+/* hover message buttons */
+
+.wrapper-2vIMkT {
+    background:#43493b!important;
+    border:1px solid #69705f!important;
+}
+
+
+.wrapper-2vIMkT button:hover {
+    background:rgba(255,255,255,.05)!important;
+}
+
+
+/* status */
+
+rect[fill="#23A55A"] {
+    fill:#5cd967!important;
+}
+
+
+rect[fill="#F0B232"] {
+    fill:#d7b24c!important;
+}
+
+
+rect[fill="#F23F43"] {
+    fill:#d46464!important;
+}
+
+
+/* buttons */
+
+.lookFilled__201d5 {
+    background:#9b9038!important;
+}
+
+
+.lookFilled__201d5:hover {
+    background:#b2a347!important;
+}
+
+
+.lookOutlined__201d5 {
+    border-color:#69705f!important;
+}
+
+
+/* badges */
+
+.numberBadge__40d59 {
+    background:#d46464!important;
+    border-radius:2px!important;
+}
 
 
 /* scrollbars */
@@ -838,7 +883,7 @@ pre {
 }
 
 
-/* firefox */
+/* firefox scrollbar */
 
 * {
     scrollbar-width:thin;
@@ -846,161 +891,40 @@ pre {
 }
 
 
-/* buttons */
-
-button {
-    border-radius:2px!important;
-}
-
-
-.lookFilled__201d5 {
-    background:var(--gold)!important;
-}
-
-
-.lookFilled__201d5:hover {
-    background:var(--gold-hover)!important;
-}
-
-
-.lookOutlined__201d5 {
-    border-color:var(--line)!important;
-}
-
-
-/* unread mentions */
-
-.numberBadge__40d59 {
-    background:var(--danger)!important;
-    border-radius:2px!important;
-}
-
-
-/* status colors */
-
-[mask*=online] {
-    color:var(--online)!important;
-}
-
-
-[mask*=idle] {
-    color:var(--idle)!important;
-}
-
-
-[mask*=dnd] {
-    color:var(--danger)!important;
-}
-
-
-/* remove newer effects */
+/* remove newer flashy stuff */
 
 [class*="shine"],
-[class*="pulse"],
-[class*="glow"] {
+[class*="glow"],
+[class*="pulse"] {
     animation:none!important;
 }
 
 
-/* old style hover speed */
+/* classic transitions */
 
 button,
 .clickable,
-[class*="item"],
-[class*="button"] {
+[class*="item"] {
     transition:
         background .12s ease,
-        color .12s ease,
-        opacity .12s ease!important;
-}
-
-
-/* server icons */
-
-.wrapper_cc5dd2 foreignObject {
-    mask:none!important;
-}
-
-
-/* keep avatars simple */
-
-[class*="avatar"] img {
-    border-radius:3px!important;
-}
-
-
-/* role cleanup */
-
-[class*="role"] {
-    border-radius:2px!important;
+        color .12s ease!important;
 }
 
 
 /* selection */
 
 ::selection {
-    background:var(--gold)!important;
+    background:#9b9038!important;
     color:white!important;
 }
 
 
-/* text balance */
+/* little leftovers */
 
-strong {
-    color:#e0e2d2;
+/* keep this because some layouts still use it */
+.container__37e49 {
+    background:#43493b!important;
 }
 
 
-h1,
-h2,
-h3 {
-    color:#d9dccb!important;
-}
-
-
-/*
- small compatibility fixes
-
- Discord moves class names around often.
- These catch some older layouts without
- affecting the main theme.
-*/
-
-
-.container__37e49,
-.container-YkUktl {
-    background:var(--forest-panel)!important;
-}
-
-
-.panels-3wFtMD {
-    background:var(--forest-panel)!important;
-    border-top:1px solid var(--line);
-}
-
-
-.members-3WRCEx {
-    background:var(--forest-side)!important;
-}
-
-
-.wrapper-3kah-n img {
-    border-radius:4px!important;
-}
-
-
-/* message popup buttons */
-
-.wrapper-2vIMkT button:hover {
-    background:var(--hover)!important;
-}
-
-
-/* call controls */
-
-.videoControls_cb9592 {
-    background:rgba(45,50,39,.9)!important;
-}
-
-
-/* done */
+/* end */
