@@ -1,181 +1,1073 @@
 /**
- * @name Classic old theme
+ * @name ForestClassic
  * @author king
- * @version 1.2.0
- * @description Handcrafted neon theme — readable, slightly imperfect, and easy to tweak.
- * @source https://github.com/aydenvraa/Classic-old-theme
+ * @version 1.0.0
+ * @description Classic 2018-2019 Discord inspired theme.
+ * @website https://github.com/
  */
 
-/* ---------- Variables (change these) ---------- */
+/*==================================================
+    IMPORTS
+==================================================*/
+
 :root{
-  --bg-1: #07110f;
-  --panel: #0f2a24;
-  --glass: rgba(255,255,255,0.02);
-  --text: #e6f7ef;
-  --muted: #9fb8a8;
-  --accent: #00ffa3;
-  --accent-2: #7cffd6;
-  --accent-alt: #9bffea;
-  --danger: #ff6b6b;
-  --radius: 12px;
-  --shadow: 0 10px 30px rgba(0,0,0,0.6);
-  --ui-font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-  --mono-font: "Segoe UI Mono", "Roboto Mono", monospace;
-  --base-font: 14px;
-  --line-height: 1.36;
-  --channel-pad: 6px 10px;
+
+/*==================================================
+    COLORS
+==================================================*/
+
+--background-primary:#515949;
+--background-secondary:#474e3f;
+--background-secondary-alt:#43493b;
+--background-tertiary:#3d4336;
+--background-floating:#4d5444;
+
+--channeltextarea:#46503d;
+
+--header:#505848;
+
+--border:#69705f;
+
+--hover:rgba(255,255,255,.045);
+--active:rgba(255,255,255,.08);
+
+--accent:#9b9038;
+--accent-hover:#b2a347;
+
+--green:#5cd967;
+--yellow:#d7b24c;
+--red:#d46464;
+
+--text-normal:#ececdf;
+--text-muted:#b6b8aa;
+--text-faint:#91967f;
+
+--scroll:#70785f;
+
+/*==================================================
+    SIZING
+==================================================*/
+
+--server-size:48px;
+--server-gap:10px;
+--avatar-radius:2px;
+--radius:0px;
+
 }
 
-/* ---------- Global app background ---------- */
-html, body, #app-mount, .app {
-  background: linear-gradient(180deg, var(--bg-1), #04100e) !important;
-  color: var(--text) !important;
-  font-family: var(--ui-font) !important;
-  font-size: var(--base-font) !important;
-  line-height: var(--line-height) !important;
-  -webkit-font-smoothing: antialiased !important;
+/*==================================================
+    FONT
+==================================================*/
+
+*{
+    font-family:
+        Whitney,
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif!important;
 }
 
-/* ---------- Panels (glass + depth) ---------- */
-[aria-label*="Servers"], [aria-label*="Channels"], [aria-label*="Text Channels"], [aria-label*="Members"], .chat {
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02)) !important;
-  border-radius: var(--radius) !important;
-  box-shadow: var(--shadow) !important;
-  backdrop-filter: blur(6px) saturate(120%) !important;
+/*==================================================
+    REMOVE MODERN ROUNDED UI
+==================================================*/
+
+*{
+    border-radius:0!important;
+    box-shadow:none!important;
 }
 
-/* ---------- Channel list (robust selectors) ---------- */
-a[href*="/channels/"], [role="link"][aria-current="true"], [aria-selected="true"] {
-  color: var(--muted) !important;
-  font-weight: 600 !important;
-  padding: var(--channel-pad) !important;
-  border-radius: 8px !important;
-  display: inline-flex !important;
-  align-items: center !important;
+/*==================================================
+    APP BACKGROUND
+==================================================*/
+
+body{
+    background:var(--background-primary)!important;
 }
 
-/* active channel — subtle neon left border */
-a[aria-current="true"], [aria-selected="true"] {
-  color: var(--text) !important;
-  background: linear-gradient(90deg, rgba(0,255,163,0.06), rgba(124,255,214,0.02)) !important;
-  border-left: 4px solid var(--accent) !important;
-  padding-left: 10px !important;
+.appMount,
+.bg__960e4,
+.layers__960e4{
+    background:var(--background-primary)!important;
 }
 
-/* hover affordance — tiny lift */
-a[href*="/channels/"]:hover, a[href*="/channels/"]:focus {
-  background: rgba(0,255,163,0.03) !important;
-  transform: translateY(-1px) !important;
-  transition: transform 120ms ease, background 120ms ease !important;
+/*==================================================
+    GUILD BAR
+==================================================*/
+
+.guilds_c48ade{
+    background:var(--background-tertiary)!important;
+    border-right:1px solid var(--border);
 }
 
-/* ---------- Messages (friendly bubbles) ---------- */
-div[class*="message"], [data-list-id*="chat-messages"], .message {
-  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.02)) !important;
-  border-radius: 12px !important;
-  padding: 10px 12px !important;
-  margin-bottom: 8px !important;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.45) !important;
-  color: var(--text) !important;
+.scroller_ef3116{
+    padding-top:10px;
 }
 
-/* author name and timestamp — monospace for personality */
-span[class*="username"], .timestamp, .headerText-2o-2h3 {
-  color: var(--accent-2) !important;
-  font-weight: 700 !important;
-  font-family: var(--mono-font) !important;
-  font-size: 13px !important;
-  text-shadow: 0 1px 0 rgba(0,0,0,0.6);
+.listItem__650eb{
+    margin-bottom:var(--server-gap);
 }
 
-/* message text */
-div[class*="content"], .markup, .messageContent- {
-  color: var(--text) !important;
-  font-size: 14px !important;
+.wrapper_cc5dd2{
+    width:var(--server-size);
+    height:var(--server-size);
 }
 
-/* mentions and role badges — punchy */
-span[class*="mention"], .role, .badge {
-  background: linear-gradient(90deg, var(--accent), var(--accent-2)) !important;
-  color: #00110a !important;
-  padding: 2px 8px !important;
-  border-radius: 999px !important;
-  font-weight: 800 !important;
-  box-shadow: 0 8px 24px rgba(0,255,163,0.06) !important;
+.wrapper_cc5dd2 foreignObject{
+    border-radius:4px!important;
 }
 
-/* links — clear and neon */
-a[href^="http"], a[href^="https"] {
-  color: var(--accent) !important;
-  text-decoration: underline dotted var(--accent-2) !important;
-  font-weight: 700 !important;
+.circleIconButton__5bc7e{
+    border:1px solid var(--border)!important;
+    background:var(--background-secondary)!important;
 }
 
-/* edited label — subtle */
-span[aria-label="edited"], .edited {
-  color: var(--muted) !important;
-  font-style: italic !important;
-  font-size: 12px !important;
+.circleIconButton__5bc7e:hover{
+    background:var(--accent)!important;
+    color:white!important;
 }
 
-/* ---------- Inputs and buttons ---------- */
-textarea, .textArea-12jD-V, .slateTextArea-1Mkdgw, [role="textbox"] {
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.03)) !important;
-  border: 1px solid rgba(255,255,255,0.03) !important;
-  color: var(--text) !important;
-  border-radius: 12px !important;
-  padding: 12px !important;
-  font-family: var(--ui-font) !important;
-  min-height: 44px !important;
-  resize: vertical !important;
+/*==================================================
+    SIDEBAR
+==================================================*/
+
+.sidebar__23e6b{
+    background:var(--background-secondary)!important;
+    border-right:1px solid var(--border)!important;
 }
 
-/* buttons — friendly rounded */
-button, .button-38aScr, [role="button"] {
-  background: linear-gradient(90deg, rgba(0,255,163,0.12), rgba(124,255,214,0.06)) !important;
-  color: #00110a !important;
-  border: none !important;
-  border-radius: 10px !important;
-  padding: 6px 10px !important;
-  font-weight: 800 !important;
-  box-shadow: 0 8px 24px rgba(0,255,163,0.06) !important;
-  cursor: pointer !important;
+/*==================================================
+    CHANNEL CATEGORY
+==================================================*/
+
+.mainContent__29444{
+    color:#d5d7c6!important;
+    font-size:12px;
+    letter-spacing:.5px;
+    font-weight:700;
 }
 
-/* hover micro-interaction */
-button:hover, [role="button"]:hover {
-  transform: translateY(-2px) !important;
-  transition: transform 120ms ease !important;
+/*==================================================
+    CHANNELS
+==================================================*/
+
+.containerDefault__29444{
+    margin:0;
+    padding:0;
 }
 
-/* ---------- Subtle accent animation (low-key) ---------- */
-@keyframes softPulse {
-  0% { box-shadow: 0 6px 18px rgba(0,255,163,0.04); transform: translateY(0); }
-  50% { box-shadow: 0 12px 36px rgba(0,255,163,0.08); transform: translateY(-1px); }
-  100% { box-shadow: 0 6px 18px rgba(0,255,163,0.04); transform: translateY(0); }
-}
-.mention, .button-38aScr, .role {
-  animation: softPulse 4s ease-in-out infinite;
-  animation-play-state: running;
+.link__2ea32{
+
+    height:30px;
+    margin:1px 8px;
+    padding-left:10px;
+
+    transition:
+        background .08s linear,
+        color .08s linear;
+
 }
 
-/* ---------- Accessibility and fallbacks ---------- */
-small, .small, .timestamp, .muted {
-  color: var(--muted) !important;
-  font-size: 12px !important;
-}
-@media (prefers-reduced-motion: reduce) {
-  * { transition: none !important; animation: none !important; }
-}
-@media (max-width: 900px) {
-  :root { --radius: 8px; --base-font: 13px; }
-  .message { border-radius: 10px !important; }
+.link__2ea32:hover{
+
+    background:var(--hover)!important;
+
 }
 
-/* ---------- Tiny handcrafted quirks ----------
-   - Slightly uneven left padding on some channel items
-   - A short casual comment for personality
-   - A small accent alt color for variety
-   These are intentional small touches to make the theme feel handcrafted.
-   -------------------------------------------------- */
-a[href*="/channels/"]:nth-child(3n) { padding-left: 12px !important; }
+.modeSelected__2ea32 .link__2ea32{
+
+    background:var(--accent)!important;
+    color:white!important;
+
+}
+
+.modeSelected__2ea32 .icon__2ea32{
+    color:white!important;
+}
+
+.icon__2ea32{
+
+    color:var(--text-muted)!important;
+
+}
+
+/*==================================================
+    SERVER HEADER
+==================================================*/
+
+.header_f37cb1{
+
+    background:var(--header)!important;
+
+    border-bottom:
+        1px solid
+        var(--border);
+
+}
+
+/*==================================================
+    SEARCH
+==================================================*/
+
+.searchBar__35e86{
+
+    background:
+        var(--background-tertiary)!important;
+
+    border:
+        1px solid
+        var(--border);
+
+}
+
+/*==================================================
+    PANELS
+==================================================*/
+
+.panels_c48ade{
+
+    background:
+        var(--background-secondary-alt)!important;
+
+    border-top:
+        1px solid
+        var(--border);
+
+}
+
+/*==================================================
+    USER PANEL
+==================================================*/
+
+.container__37e49:hover{
+
+    background:
+        rgba(255,255,255,.04)!important;
+
+}
+
+/*==================================================
+    TITLE BAR
+==================================================*/
+
+.title_f75fb0{
+
+    background:
+        var(--header)!important;
+
+    border-bottom:
+        1px solid
+        var(--border);
+
+}
+
+/*==================================================
+    CHAT
+==================================================*/
+
+.chat_f75fb0{
+
+    background:
+        var(--background-primary)!important;
+
+}
+
+/*==================================================
+    MEMBER LIST
+==================================================*/
+
+.membersWrap_c8ffbb{
+
+    background:
+        var(--background-secondary)!important;
+
+    border-left:
+        1px solid
+        var(--border);
+
+}
+
+.container_c8ffbb{
+
+    background:
+        transparent!important;
+
+}
+
+/*==================================================
+    AVATARS
+==================================================*/
+
+.avatar__44b0c,
+.avatar_c19a55,
+.avatar__37e49,
+.wrapper__44b0c img{
+
+    border-radius:
+        var(--avatar-radius)!important;
+
+}
+
+/*==================================================
+    BUTTONS
+==================================================*/
+
+button{
+
+    border-radius:0!important;
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+}
+
+/*==================================================
+    SCROLLBARS
+==================================================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:
+        var(--background-secondary);
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:
+        var(--scroll);
+
+    border:
+        2px solid
+        var(--background-secondary);
+
+}
+
+/*==================================================
+    TEXT COLORS
+==================================================*/
+
+.colorStandard__5345c{
+
+    color:
+        var(--text-normal)!important;
+
+}
+
+.colorHeaderSecondary__8c518,
+.colorMuted__5345c,
+.subtext__339d0{
+
+    color:
+        var(--text-muted)!important;
+
+}
+
+/*==================================================
+    STATUS
+==================================================*/
+
+[mask*=online]{
+
+    color:
+        var(--green)!important;
+
+}
+
+[mask*=idle]{
+
+    color:
+        var(--yellow)!important;
+
+}
+
+[mask*=dnd]{
+
+    color:
+        var(--red)!important;
+
+}
+
+/*==================================================
+    TRANSITIONS
+==================================================*/
+
+*{
+
+    transition:
+        background .08s linear,
+        border-color .08s linear,
+        color .08s linear;
+
+}
+/*==================================================
+    PART 2
+    CHAT • MESSAGES • EMBEDS • REACTIONS
+==================================================*/
+
+/*==================================================
+    CHAT CONTAINER
+==================================================*/
+
+.chatContent_f75fb0,
+.content_f75fb0,
+.scrollerContent__36d07{
+    background:var(--background-primary)!important;
+}
+
+/*==================================================
+    MESSAGE SPACING (2019 STYLE)
+==================================================*/
+
+.message__5126c{
+    padding:2px 18px;
+    margin:0;
+    border-top:1px solid transparent;
+}
+
+.message__5126c:hover{
+    background:rgba(255,255,255,.025)!important;
+    border-top:1px solid rgba(255,255,255,.03);
+}
+
+.cozy_f5c119.wrapper_c19a55{
+    padding-top:3px;
+    padding-bottom:3px;
+}
+
+/*==================================================
+    AVATARS
+==================================================*/
+
+.avatar_c19a55{
+    margin-top:2px;
+    margin-right:16px;
+}
+
+/*==================================================
+    USERNAME
+==================================================*/
+
+.username_f9f2ca{
+    font-size:15px;
+    font-weight:600;
+    color:var(--text-normal)!important;
+}
+
+/*==================================================
+    TIMESTAMP
+==================================================*/
+
+.timestamp_c19a55{
+    color:var(--text-faint)!important;
+    font-size:11px;
+}
+
+/*==================================================
+    MESSAGE TEXT
+==================================================*/
+
+.markup_a7e664{
+    color:var(--text-normal)!important;
+    line-height:1.35;
+}
+
+/*==================================================
+    LINKS
+==================================================*/
+
+.anchor_af404b{
+    color:#77b6ff!important;
+    text-decoration:none;
+}
+
+.anchor_af404b:hover{
+    text-decoration:underline;
+}
+
+/*==================================================
+    EDITED TAG
+==================================================*/
+
+.edited_c19a55{
+    color:var(--text-faint)!important;
+}
+
+/*==================================================
+    BOT TAG
+==================================================*/
+
+.botTagRegular_c89c9a{
+    background:var(--accent)!important;
+    border-radius:2px!important;
+}
+
+/*==================================================
+    MESSAGE INPUT
+==================================================*/
+
+.form_f75fb0{
+    background:var(--background-secondary)!important;
+    border-top:1px solid var(--border);
+}
+
+.channelTextArea_f75fb0{
+    background:transparent!important;
+}
+
+.scrollableContainer__74017{
+    background:var(--channeltextarea)!important;
+    border:1px solid var(--border)!important;
+    min-height:44px;
+}
+
+.editor__1b31f{
+    color:var(--text-normal)!important;
+}
+
+.placeholder__1b31f{
+    color:var(--text-faint)!important;
+}
+
+/*==================================================
+    ATTACH BUTTONS
+==================================================*/
+
+.attachButton__0923f,
+.buttonContainer_e6e74f button{
+    color:var(--text-muted)!important;
+}
+
+.attachButton__0923f:hover,
+.buttonContainer_e6e74f button:hover{
+    color:white!important;
+}
+
+/*==================================================
+    REPLY PREVIEW
+==================================================*/
+
+.replyBar__841c8{
+    background:var(--background-secondary-alt)!important;
+    border-bottom:1px solid var(--border);
+}
+
+/*==================================================
+    REPLY LINES
+==================================================*/
+
+.repliedMessage_e2bf4a:before{
+    border-color:var(--border)!important;
+}
+
+/*==================================================
+    EMBEDS
+==================================================*/
+
+.embedFull__623de{
+    background:var(--background-secondary)!important;
+    border:1px solid var(--border)!important;
+}
+
+.embedTitle__623de{
+    color:var(--text-normal)!important;
+}
+
+.embedDescription__623de{
+    color:var(--text-muted)!important;
+}
+
+/*==================================================
+    CODE BLOCKS
+==================================================*/
+
+code{
+    background:#383d32!important;
+    border:1px solid var(--border);
+}
+
+pre{
+    background:#383d32!important;
+    border:1px solid var(--border)!important;
+}
+
+/*==================================================
+    BLOCKQUOTE
+==================================================*/
+
+.blockquoteContainer__75297{
+    border-left:3px solid var(--accent)!important;
+}
+
+/*==================================================
+    REACTIONS
+==================================================*/
+
+.reaction__23977{
+    background:var(--background-secondary)!important;
+    border:1px solid var(--border)!important;
+    border-radius:2px!important;
+}
+
+.reaction__23977:hover{
+    background:var(--hover)!important;
+}
+
+.reactionMe__23977{
+    background:#5b623e!important;
+    border-color:var(--accent)!important;
+}
+
+/*==================================================
+    MENTIONS
+==================================================*/
+
+.wrapper_f61d60{
+    background:rgba(155,144,56,.22)!important;
+    color:#efe7a8!important;
+}
+
+.wrapper_f61d60:hover{
+    background:rgba(155,144,56,.36)!important;
+}
+
+/*==================================================
+    SPOILERS
+==================================================*/
+
+.spoilerContent__54ab5{
+    background:#2d3128!important;
+}
+
+.spoilerContent__54ab5:hover{
+    background:#42473a!important;
+}
+
+/*==================================================
+    ATTACHMENTS
+==================================================*/
+
+.attachment__06ca5{
+    background:var(--background-secondary)!important;
+    border:1px solid var(--border)!important;
+}
+
+/*==================================================
+    IMAGE PREVIEWS
+==================================================*/
+
+.imageWrapper_af017a{
+    border:1px solid var(--border)!important;
+}
+
+/*==================================================
+    FILES
+==================================================*/
+
+.fileWrapper__0ccae{
+    background:var(--background-secondary)!important;
+    border:1px solid var(--border)!important;
+}
+
+/*==================================================
+    THREAD BAR
+==================================================*/
+
+.container__01ae2{
+    background:var(--background-secondary)!important;
+    border-left:1px solid var(--border);
+}
+
+/*==================================================
+    NEW MESSAGE BAR
+==================================================*/
+
+.newMessagesBar__0f481{
+    background:var(--accent)!important;
+    border-radius:0!important;
+}
+
+/*==================================================
+    JUMP TO PRESENT
+==================================================*/
+
+.barButtonAlt__0f481{
+    background:var(--background-secondary)!important;
+    border:1px solid var(--border);
+}
+
+/*==================================================
+    DATE DIVIDER
+==================================================*/
+
+.divider__5126c{
+    border-color:rgba(255,255,255,.08)!important;
+}
+
+.content__908e2{
+    background:var(--background-primary)!important;
+    color:var(--text-muted)!important;
+}
+
+/*==================================================
+    TYPING INDICATOR
+==================================================*/
+
+.typing_b88801{
+    background:var(--background-secondary)!important;
+    border-top:1px solid var(--border);
+}
+
+/*==================================================
+    LOADING
+==================================================*/
+
+.spinner__0b9fc{
+    color:var(--accent)!important;
+}
+/*==================================================
+    PART 3
+    MEMBERS • USER PANEL • VOICE • PROFILE POPOUTS
+==================================================*/
+
+/*==================================================
+    MEMBER LIST
+==================================================*/
+
+.membersWrap_c8ffbb{
+    min-width:240px;
+}
+
+.membersGroup_c8ffbb{
+    padding:16px 8px 6px;
+    color:var(--text-faint)!important;
+    font-size:11px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.6px;
+}
+
+.member_c8ffbb{
+    margin:0 6px;
+    padding:3px 6px;
+    border-radius:0!important;
+    transition:background .08s linear;
+}
+
+.member_c8ffbb:hover{
+    background:var(--hover)!important;
+}
+
+.selected__91a9d,
+.selected__91a9d:hover{
+    background:var(--active)!important;
+}
+
+.layout__91a9d{
+    border-radius:0!important;
+    min-height:42px;
+}
+
+.avatar__91a9d{
+    border-radius:2px!important;
+}
+
+.name__91a9d{
+    color:var(--text-normal)!important;
+    font-size:14px;
+}
+
+.activity__91a9d,
+.subText__91a9d{
+    color:var(--text-muted)!important;
+    font-size:12px;
+}
+
+/*==================================================
+    USER PANEL
+==================================================*/
+
+.panels_c48ade{
+    height:52px;
+}
+
+.container__37e49{
+    background:var(--background-secondary-alt)!important;
+}
+
+.container__37e49:hover{
+    background:var(--hover)!important;
+}
+
+.nameTag__37e49{
+    margin-left:8px;
+}
+
+.name__37e49{
+    color:var(--text-normal)!important;
+    font-weight:600;
+}
+
+.subtext__339d0{
+    color:var(--text-muted)!important;
+}
+
+/*==================================================
+    USER PANEL BUTTONS
+==================================================*/
+
+.button__67645{
+    border-radius:0!important;
+    width:32px;
+    height:32px;
+}
+
+.button__67645:hover{
+    background:var(--hover)!important;
+}
+
+/*==================================================
+    VOICE CHANNELS
+==================================================*/
+
+.iconContainer__2ea32{
+    color:var(--text-muted)!important;
+}
+
+.modeConnected__2ea32 .link__2ea32{
+    background:rgba(92,217,103,.18)!important;
+}
+
+.modeConnected__2ea32 .icon__2ea32{
+    color:var(--green)!important;
+}
+
+.modeMuted__2ea32{
+    opacity:.7;
+}
+
+.modeLocked__2ea32{
+    opacity:.55;
+}
+
+/*==================================================
+    SPEAKING USERS
+==================================================*/
+
+.border__2f4f7.speaking__2f4f7{
+    box-shadow:inset 0 0 0 1px var(--green)!important;
+}
+
+.avatarSpeaking__44b0c{
+    box-shadow:0 0 0 1px var(--green)!important;
+}
+
+/*==================================================
+    VOICE PANEL
+==================================================*/
+
+.wrapper__0d616{
+    background:var(--background-secondary)!important;
+    border-top:1px solid var(--border);
+}
+
+.connection__0d616{
+    background:transparent!important;
+}
+
+/*==================================================
+    STREAM / SCREEN SHARE
+==================================================*/
+
+.callContainer_cb9592{
+    background:var(--background-primary)!important;
+}
+
+.videoControls_cb9592{
+    background:rgba(45,50,39,.92)!important;
+}
+
+/*==================================================
+    PROFILE POPOUT
+==================================================*/
+
+.userPopoutOuter_c69a7b{
+    background:var(--background-secondary)!important;
+    border:1px solid var(--border)!important;
+}
+
+.userPopoutInner_c69a7b{
+    background:transparent!important;
+}
+
+.banner__68edb{
+    filter:saturate(.8);
+}
+
+.avatar__75742{
+    border-radius:2px!important;
+}
+
+.nickname__63ed3{
+    color:var(--text-normal)!important;
+}
+
+.usernameRow__63ed3{
+    color:var(--text-muted)!important;
+}
+
+/*==================================================
+    PROFILE SECTIONS
+==================================================*/
+
+.section__6f61e{
+    border-top:1px solid rgba(255,255,255,.06)!important;
+    padding-top:12px;
+}
+
+.section__6f61e:first-child{
+    border-top:none!important;
+}
+
+/*==================================================
+    ROLE PILLS
+==================================================*/
+
+.role_dfa8b6{
+    background:#505646!important;
+    border:1px solid var(--border)!important;
+    border-radius:2px!important;
+    color:var(--text-normal)!important;
+    padding:3px 8px;
+    margin:3px;
+}
+
+.roleCircle__4f569{
+    display:none!important;
+}
+
+.addButton__29444{
+    border-radius:0!important;
+}
+
+/*==================================================
+    CUSTOM STATUS
+==================================================*/
+
+.customStatus__3aa7f{
+    color:var(--text-muted)!important;
+}
+
+/*==================================================
+    ACTIVITY CARDS
+==================================================*/
+
+.activity__5d473{
+    background:var(--background-secondary-alt)!important;
+    border:1px solid var(--border);
+}
+
+/*==================================================
+    NOTE BOX
+==================================================*/
+
+.note__7e549 textarea{
+    background:var(--background-tertiary)!important;
+    border:1px solid var(--border)!important;
+    color:var(--text-normal)!important;
+}
+
+/*==================================================
+    MUTUAL SERVERS / FRIENDS
+==================================================*/
+
+.listRow__9d78f:hover{
+    background:var(--hover)!important;
+}
+
+.listRow__9d78f{
+    border-radius:0!important;
+}
+
+/*==================================================
+    STATUS COLORS
+==================================================*/
+
+rect[fill="#23A55A"]{
+    fill:var(--green)!important;
+}
+
+rect[fill="#F0B232"]{
+    fill:var(--yellow)!important;
+}
+
+rect[fill="#F23F43"]{
+    fill:var(--red)!important;
+}
+
+/*==================================================
+    BADGES
+==================================================*/
+
+.profileBadge__63ed3{
+    filter:saturate(.9);
+}
+
+/*==================================================
+    USER PROFILE MODAL
+==================================================*/
+
+.root__24502{
+    background:var(--background-secondary)!important;
+}
+
+.topSection__63ed3{
+    background:var(--background-secondary-alt)!important;
+}
+
+.body__24502{
+    background:var(--background-primary)!important;
+}
+
+/*==================================================
+    PROFILE TABS
+==================================================*/
+
+.tabBar__63ed3{
+    border-bottom:1px solid var(--border)!important;
+}
+
+.tabBarItem__63ed3{
+    border-radius:0!important;
+}
+
+.tabBarItem__63ed3:hover{
+    background:var(--hover)!important;
+}
+
+.tabBarItem__63ed3[aria-selected="true"]{
+    background:var(--accent)!important;
+    color:white!important;
+}
+
+/*==================================================
+    PROFILE BUTTONS
+==================================================*/
+
+.lookFilled__201d5{
+    border-radius:0!important;
+}
+
+.lookOutlined__201d5{
+    border-radius:0!important;
+}
+
+/*==================================================
+    END PART 3
+==================================================*/
