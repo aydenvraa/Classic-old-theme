@@ -1,1 +1,1 @@
-if there are any bugs join the discord or add bingsnail
+if there are any bugs add bingsnail on discord
