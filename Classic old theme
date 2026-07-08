@@ -4,6 +4,7 @@
  * @version 8.0
  * @description The ultimate military tactical terminal overhaul. Features completely reconstructed, fully functional geometric square avatars, crosshair overlays, and an interactive diagnostic interface.
  * @source https://github.com/BetterDiscord/Themes
+* @source https://github.com/aydenvraa/Classic-old-theme/tree/main
  */
 
 :root, .theme-dark {
