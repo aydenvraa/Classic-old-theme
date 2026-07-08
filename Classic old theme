@@ -1071,3 +1071,465 @@ rect[fill="#F23F43"]{
 /*==================================================
     END PART 3
 ==================================================*/
+/* =========================================================
+   ForestClassic.theme.css
+   PART 4 — SETTINGS / FRIENDS / SEARCH / MODALS / MENUS
+   ========================================================= */
+
+
+/* Settings background */
+.standardSidebarView-E9Pc3j,
+.contentRegion-3HkfJJ {
+    background: #1d1f1b !important;
+}
+
+
+/* Settings sidebar */
+.sidebarRegionScroller-FzLwQ9 {
+    background: #181a16 !important;
+}
+
+
+.sidebar-1tnWFu .item-3XjbnG {
+    color: #9a9e91 !important;
+    border-radius: 3px !important;
+}
+
+
+.sidebar-1tnWFu .item-3XjbnG:hover {
+    background: rgba(255,255,255,.04) !important;
+    color: #d4d7c7 !important;
+}
+
+
+.sidebar-1tnWFu .item-3XjbnG.selected-g-kMVV {
+    background: #30352a !important;
+    color: #c3d18c !important;
+}
+
+
+/* Settings panels */
+.cardPrimary-3qRT__,
+.card-16VQ8C {
+    background: #20231d !important;
+    border: 1px solid #35382e !important;
+    border-radius: 3px !important;
+}
+
+
+/* Inputs */
+.input-2g-os5,
+.textarea-2rYpWZ {
+    background: #151713 !important;
+    border: 1px solid #35382e !important;
+    color: #d4d7c7 !important;
+}
+
+
+/* Buttons */
+.button-1F8Q5G {
+    border-radius: 3px !important;
+}
+
+
+.lookFilled-1Gx00P {
+    background: #59663d !important;
+}
+
+
+.lookFilled-1Gx00P:hover {
+    background: #68774a !important;
+}
+
+
+/* Friend list */
+.peopleListItem-u6dGxF {
+    border-top: 1px solid #30332b !important;
+}
+
+
+.peopleListItem-u6dGxF:hover {
+    background: rgba(255,255,255,.035) !important;
+}
+
+
+/* Search bar */
+.searchBar-3dMhjb,
+.searchBar-2M9mRP {
+    background: #151713 !important;
+    border: 1px solid #35382e !important;
+}
+
+
+.searchBarComponent-3N7dCG {
+    color: #aaaE9d !important;
+}
+
+
+/* Search results */
+.searchResultsWrap-2fvIzr {
+    background: #181a16 !important;
+    border-left: 1px solid #35382e !important;
+}
+
+
+.searchResult-O9NDji {
+    background: transparent !important;
+}
+
+
+.searchResult-O9NDji:hover {
+    background: rgba(255,255,255,.04) !important;
+}
+
+
+/* Context menus */
+.menu-1QACrS {
+    background: #181a16 !important;
+    border: 1px solid #35382e !important;
+    border-radius: 3px !important;
+}
+
+
+.item-1tOPte {
+    color: #c8c9bc !important;
+}
+
+
+.item-1tOPte:hover {
+    background: #30352a !important;
+    color: #d9dfbd !important;
+}
+
+
+/* Popouts */
+.popout-2sKjHu,
+.container-2O1UgZ {
+    background: #181a16 !important;
+    border: 1px solid #35382e !important;
+    border-radius: 3px !important;
+}
+
+
+/* Modals */
+.modal-3c3bKg {
+    background: #20231d !important;
+    border: 1px solid #454a38 !important;
+    border-radius: 4px !important;
+}
+
+
+.header-1TKi98 {
+    color: #d7dbc9 !important;
+}
+
+
+/* Confirm dialogs */
+.root-1gCeng {
+    background: #20231d !important;
+    border: 1px solid #35382e !important;
+}
+
+
+/* Tooltips */
+.tooltip-14MtrL {
+    background: #11130f !important;
+    border: 1px solid #35382e !important;
+    color: #d4d7c7 !important;
+}
+/* =========================================================
+   ForestClassic.theme.css
+   PART 5 — FINAL POLISH / ANIMATIONS / GLOBAL FIXES
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   GLOBAL CLASSIC FEEL
+   --------------------------------------------------------- */
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #3b4032 transparent;
+}
+
+
+body {
+    font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+
+/* Remove overly modern rounded UI */
+[class*="rounded"],
+[class*="borderRadius"] {
+    border-radius: 3px !important;
+}
+
+
+/* Thin classic borders */
+[class*="container"],
+[class*="wrapper"] {
+    border-color: #30332b;
+}
+
+
+
+/* ---------------------------------------------------------
+   SCROLLBARS
+   --------------------------------------------------------- */
+
+::-webkit-scrollbar {
+    width: 8px !important;
+    height: 8px !important;
+}
+
+
+::-webkit-scrollbar-track {
+    background: transparent !important;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: #3b4032 !important;
+    border-radius: 2px !important;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: #596344 !important;
+}
+
+
+
+/* ---------------------------------------------------------
+   OLD DISCORD STYLE ANIMATIONS
+   --------------------------------------------------------- */
+
+[class*="hover"],
+[class*="item"],
+button,
+.clickable {
+    transition:
+        background-color .12s ease,
+        color .12s ease,
+        opacity .12s ease !important;
+}
+
+
+/* Remove newer bouncy transitions */
+* {
+    animation-duration: .12s !important;
+}
+
+
+
+/* ---------------------------------------------------------
+   SERVER ICON AREA
+   --------------------------------------------------------- */
+
+.wrapper-3kah-n {
+    border-radius: 4px !important;
+}
+
+
+.wrapper-3kah-n foreignObject {
+    mask: none !important;
+}
+
+
+.wrapper-3kah-n img {
+    border-radius: 4px !important;
+}
+
+
+.wrapper-3kah-n:hover {
+    transform: none !important;
+}
+
+
+
+/* ---------------------------------------------------------
+   OPTIONAL SQUARE AVATARS
+   --------------------------------------------------------- */
+
+.avatar-2e8lTP,
+.avatar-1BDn8e,
+.avatar-3QF_VA {
+    border-radius: 4px !important;
+}
+
+
+.userAvatar-3Hna7Y {
+    border-radius: 4px !important;
+}
+
+
+
+/* ---------------------------------------------------------
+   ROLE BADGES
+   --------------------------------------------------------- */
+
+.role-2TIOKu {
+    border-radius: 2px !important;
+    border: 1px solid rgba(255,255,255,.12) !important;
+    padding: 2px 5px !important;
+}
+
+
+.roleCircle-1EgnFN {
+    border-radius: 50% !important;
+}
+
+
+
+/* ---------------------------------------------------------
+   USER PANEL
+   --------------------------------------------------------- */
+
+.panels-3wFtMD {
+    background: #181a16 !important;
+    border-top: 1px solid #35382e !important;
+}
+
+
+.container-YkUktl {
+    background: #181a16 !important;
+}
+
+
+.avatarWrapper-1B9FTW img {
+    border-radius: 4px !important;
+}
+
+
+
+/* ---------------------------------------------------------
+   VOICE PANEL
+   --------------------------------------------------------- */
+
+.container-1giJp5 {
+    background: #181a16 !important;
+    border-top: 1px solid #35382e !important;
+}
+
+
+.avatarSpeaking-2IGMRN {
+    box-shadow: 0 0 0 2px #788c50 !important;
+}
+
+
+
+/* ---------------------------------------------------------
+   MEMBER LIST POLISH
+   --------------------------------------------------------- */
+
+.members-3WRCEx {
+    background: #181a16 !important;
+}
+
+
+.member-2gU6Ar {
+    margin: 1px 4px !important;
+    border-radius: 3px !important;
+}
+
+
+.member-2gU6Ar:hover {
+    background: rgba(255,255,255,.035) !important;
+}
+
+
+
+/* ---------------------------------------------------------
+   MESSAGE HOVER ACTIONS
+   --------------------------------------------------------- */
+
+.wrapper-2vIMkT {
+    background: #20231d !important;
+    border: 1px solid #35382e !important;
+}
+
+
+.wrapper-2vIMkT button:hover {
+    background: #30352a !important;
+}
+
+
+
+/* ---------------------------------------------------------
+   EMOJI PICKER
+   --------------------------------------------------------- */
+
+.contentWrapper-SvZHNd {
+    background: #181a16 !important;
+    border: 1px solid #35382e !important;
+}
+
+
+.emojiItem-277VFM:hover {
+    background: #30352a !important;
+}
+
+
+
+/* ---------------------------------------------------------
+   AUTOCOMPLETE / MENTIONS
+   --------------------------------------------------------- */
+
+.autocomplete-3NRXG8 {
+    background: #181a16 !important;
+    border: 1px solid #35382e !important;
+}
+
+
+.selected-3H3-RC {
+    background: #30352a !important;
+}
+
+
+
+/* ---------------------------------------------------------
+   TOP BAR
+   --------------------------------------------------------- */
+
+.title-31SJ6t {
+    background: #181a16 !important;
+    border-bottom: 1px solid #35382e !important;
+}
+
+
+.topic-11NuQZ {
+    color: #858a7c !important;
+}
+
+
+
+/* ---------------------------------------------------------
+   DISABLE MODERN GLOW EFFECTS
+   --------------------------------------------------------- */
+
+[class*="shine"],
+[class*="pulse"],
+[class*="glow"] {
+    animation: none !important;
+}
+
+
+
+/* ---------------------------------------------------------
+   FINAL COLOR BALANCE
+   --------------------------------------------------------- */
+
+::selection {
+    background: #59663d !important;
+    color: #ffffff !important;
+}
+
+
+strong {
+    color: #e0e2d2;
+}
+
+
+h1,h2,h3 {
+    color: #d9dccb !important;
+}
