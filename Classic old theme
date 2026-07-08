@@ -1,1535 +1,1226 @@
 /**
  * @name ForestClassic
  * @author king
- * @version 1.0.0
- * @description Classic 2018-2019 Discord inspired theme.
- * @website https://github.com/aydenvraa/Classic-old-theme
+ * @version 1.1.0
+ * @description Classic Discord inspired theme (2018-2019 style)
+ *source https://github.com/aydenvraa/Classic-old-theme
  */
 
-/*==================================================
-    IMPORTS
-==================================================*/
 
-:root{
+/* core */
 
-/*==================================================
-    COLORS
-==================================================*/
+:root {
+    --fc-bg-main:#515949;
+    --fc-bg-side:#474e3f;
+    --fc-bg-dark:#3d4336;
+    --fc-panel:#43493b;
 
---background-primary:#515949;
---background-secondary:#474e3f;
---background-secondary-alt:#43493b;
---background-tertiary:#3d4336;
---background-floating:#4d5444;
+    --fc-border:#69705f;
 
---channeltextarea:#46503d;
+    --fc-hover:rgba(255,255,255,.045);
+    --fc-active:rgba(255,255,255,.08);
 
---header:#505848;
+    --fc-accent:#9b9038;
+    --fc-accent-hover:#b2a347;
 
---border:#69705f;
+    --fc-text:#ececdf;
+    --fc-muted:#b6b8aa;
+    --fc-faint:#91967f;
 
---hover:rgba(255,255,255,.045);
---active:rgba(255,255,255,.08);
-
---accent:#9b9038;
---accent-hover:#b2a347;
-
---green:#5cd967;
---yellow:#d7b24c;
---red:#d46464;
-
---text-normal:#ececdf;
---text-muted:#b6b8aa;
---text-faint:#91967f;
-
---scroll:#70785f;
-
-/*==================================================
-    SIZING
-==================================================*/
-
---server-size:48px;
---server-gap:10px;
---avatar-radius:2px;
---radius:0px;
-
+    --fc-green:#5cd967;
+    --fc-yellow:#d7b24c;
+    --fc-red:#d46464;
 }
 
-/*==================================================
-    FONT
-==================================================*/
 
-*{
-    font-family:
-        Whitney,
-        "Helvetica Neue",
-        Helvetica,
-        Arial,
-        sans-serif!important;
+/* font */
+
+* {
+    font-family:Whitney,"Helvetica Neue",Arial,sans-serif!important;
 }
 
-/*==================================================
-    REMOVE MODERN ROUNDED UI
-==================================================*/
 
-*{
+/* remove modern discord styling */
+
+* {
     border-radius:0!important;
     box-shadow:none!important;
 }
 
-/*==================================================
-    APP BACKGROUND
-==================================================*/
 
-body{
-    background:var(--background-primary)!important;
+/* app */
+
+body,
+.appMount__51fd7,
+.layers__960e4 {
+    background:var(--fc-bg-main)!important;
 }
 
-.appMount,
-.bg__960e4,
-.layers__960e4{
-    background:var(--background-primary)!important;
+
+/* main layout */
+
+.base_c48ade {
+    background:var(--fc-bg-main)!important;
 }
 
-/*==================================================
-    GUILD BAR
-==================================================*/
 
-.guilds_c48ade{
-    background:var(--background-tertiary)!important;
-    border-right:1px solid var(--border);
+/* guild bar */
+
+.guilds_c48ade {
+    background:var(--fc-bg-dark)!important;
+    border-right:1px solid var(--fc-border);
 }
 
-.scroller_ef3116{
+
+.scroller_ef3116 {
     padding-top:10px;
 }
 
-.listItem__650eb{
-    margin-bottom:var(--server-gap);
+
+.listItem__650eb {
+    margin-bottom:10px;
 }
 
-.wrapper_cc5dd2{
-    width:var(--server-size);
-    height:var(--server-size);
+
+.wrapper_cc5dd2 {
+    width:48px;
+    height:48px;
 }
 
-.wrapper_cc5dd2 foreignObject{
+
+.wrapper_cc5dd2 img {
     border-radius:4px!important;
 }
 
-.circleIconButton__5bc7e{
-    border:1px solid var(--border)!important;
-    background:var(--background-secondary)!important;
+
+/* selected server */
+
+.selected__91816 .wrapper_cc5dd2,
+.wrapper_cc5dd2:hover {
+    transform:none!important;
 }
 
-.circleIconButton__5bc7e:hover{
-    background:var(--accent)!important;
+
+/* add/explore buttons */
+
+.circleIconButton__5bc7e {
+    background:var(--fc-panel)!important;
+    border:1px solid var(--fc-border)!important;
+    color:var(--fc-muted)!important;
+}
+
+
+.circleIconButton__5bc7e:hover {
+    background:var(--fc-accent)!important;
     color:white!important;
 }
 
-/*==================================================
-    SIDEBAR
-==================================================*/
 
-.sidebar__23e6b{
-    background:var(--background-secondary)!important;
-    border-right:1px solid var(--border)!important;
+/* channel sidebar */
+
+.sidebar__23e6b {
+    background:var(--fc-bg-side)!important;
+    border-right:1px solid var(--fc-border);
 }
 
-/*==================================================
-    CHANNEL CATEGORY
-==================================================*/
 
-.mainContent__29444{
+.containerDefault__29444 {
+    margin:0;
+}
+
+
+.mainContent__29444 {
     color:#d5d7c6!important;
     font-size:12px;
-    letter-spacing:.5px;
     font-weight:700;
+    letter-spacing:.5px;
 }
 
-/*==================================================
-    CHANNELS
-==================================================*/
 
-.containerDefault__29444{
-    margin:0;
-    padding:0;
-}
+/* channels */
 
-.link__2ea32{
-
+.link__2ea32 {
     height:30px;
     margin:1px 8px;
     padding-left:10px;
-
-    transition:
-        background .08s linear,
-        color .08s linear;
-
 }
 
-.link__2ea32:hover{
 
-    background:var(--hover)!important;
-
+.link__2ea32:hover {
+    background:var(--fc-hover)!important;
 }
 
-.modeSelected__2ea32 .link__2ea32{
 
-    background:var(--accent)!important;
-    color:white!important;
-
-}
-
-.modeSelected__2ea32 .icon__2ea32{
+.modeSelected__2ea32 .link__2ea32 {
+    background:var(--fc-accent)!important;
     color:white!important;
 }
 
-.icon__2ea32{
 
-    color:var(--text-muted)!important;
-
+.modeSelected__2ea32 .icon__2ea32 {
+    color:white!important;
 }
 
-/*==================================================
-    SERVER HEADER
-==================================================*/
 
-.header_f37cb1{
-
-    background:var(--header)!important;
-
-    border-bottom:
-        1px solid
-        var(--border);
-
+.icon__2ea32 {
+    color:var(--fc-muted)!important;
 }
 
-/*==================================================
-    SEARCH
-==================================================*/
 
-.searchBar__35e86{
+/* top header */
 
-    background:
-        var(--background-tertiary)!important;
-
-    border:
-        1px solid
-        var(--border);
-
+.header_f37cb1,
+.title_f75fb0 {
+    background:#505848!important;
+    border-bottom:1px solid var(--fc-border);
 }
 
-/*==================================================
-    PANELS
-==================================================*/
 
-.panels_c48ade{
+/* search */
 
-    background:
-        var(--background-secondary-alt)!important;
-
-    border-top:
-        1px solid
-        var(--border);
-
+.searchBar__35e86 {
+    background:var(--fc-bg-dark)!important;
+    border:1px solid var(--fc-border)!important;
 }
 
-/*==================================================
-    USER PANEL
-==================================================*/
 
-.container__37e49:hover{
-
-    background:
-        rgba(255,255,255,.04)!important;
-
+.searchBar__35e86 input {
+    color:var(--fc-text)!important;
 }
 
-/*==================================================
-    TITLE BAR
-==================================================*/
 
-.title_f75fb0{
+/* chat */
 
-    background:
-        var(--header)!important;
-
-    border-bottom:
-        1px solid
-        var(--border);
-
+.chat_f75fb0,
+.chatContent_f75fb0 {
+    background:var(--fc-bg-main)!important;
 }
 
-/*==================================================
-    CHAT
-==================================================*/
 
-.chat_f75fb0{
+/* members */
 
-    background:
-        var(--background-primary)!important;
-
+.membersWrap_c8ffbb {
+    background:var(--fc-bg-side)!important;
+    border-left:1px solid var(--fc-border);
 }
 
-/*==================================================
-    MEMBER LIST
-==================================================*/
 
-.membersWrap_c8ffbb{
-
-    background:
-        var(--background-secondary)!important;
-
-    border-left:
-        1px solid
-        var(--border);
-
+.container_c8ffbb {
+    background:transparent!important;
 }
 
-.container_c8ffbb{
 
-    background:
-        transparent!important;
+/* user panel */
 
+.panels_c48ade {
+    background:var(--fc-panel)!important;
+    border-top:1px solid var(--fc-border);
 }
 
-/*==================================================
-    AVATARS
-==================================================*/
 
-.avatar__44b0c,
+.container__37e49:hover {
+    background:var(--fc-hover)!important;
+}
+
+
+/* avatars */
+
 .avatar_c19a55,
+.avatar__44b0c,
 .avatar__37e49,
-.wrapper__44b0c img{
-
-    border-radius:
-        var(--avatar-radius)!important;
-
-}
-
-/*==================================================
-    BUTTONS
-==================================================*/
-
-button{
-
-    border-radius:0!important;
-
-    border:
-        1px solid rgba(255,255,255,.08);
-
-}
-
-/*==================================================
-    SCROLLBARS
-==================================================*/
-
-::-webkit-scrollbar{
-
-    width:10px;
-
-}
-
-::-webkit-scrollbar-track{
-
-    background:
-        var(--background-secondary);
-
-}
-
-::-webkit-scrollbar-thumb{
-
-    background:
-        var(--scroll);
-
-    border:
-        2px solid
-        var(--background-secondary);
-
-}
-
-/*==================================================
-    TEXT COLORS
-==================================================*/
-
-.colorStandard__5345c{
-
-    color:
-        var(--text-normal)!important;
-
-}
-
-.colorHeaderSecondary__8c518,
-.colorMuted__5345c,
-.subtext__339d0{
-
-    color:
-        var(--text-muted)!important;
-
-}
-
-/*==================================================
-    STATUS
-==================================================*/
-
-[mask*=online]{
-
-    color:
-        var(--green)!important;
-
-}
-
-[mask*=idle]{
-
-    color:
-        var(--yellow)!important;
-
-}
-
-[mask*=dnd]{
-
-    color:
-        var(--red)!important;
-
-}
-
-/*==================================================
-    TRANSITIONS
-==================================================*/
-
-*{
-
-    transition:
-        background .08s linear,
-        border-color .08s linear,
-        color .08s linear;
-
-}
-/*==================================================
-    PART 2
-    CHAT • MESSAGES • EMBEDS • REACTIONS
-==================================================*/
-
-/*==================================================
-    CHAT CONTAINER
-==================================================*/
-
-.chatContent_f75fb0,
-.content_f75fb0,
-.scrollerContent__36d07{
-    background:var(--background-primary)!important;
-}
-
-/*==================================================
-    MESSAGE SPACING (2019 STYLE)
-==================================================*/
-
-.message__5126c{
-    padding:2px 18px;
-    margin:0;
-    border-top:1px solid transparent;
-}
-
-.message__5126c:hover{
-    background:rgba(255,255,255,.025)!important;
-    border-top:1px solid rgba(255,255,255,.03);
-}
-
-.cozy_f5c119.wrapper_c19a55{
-    padding-top:3px;
-    padding-bottom:3px;
-}
-
-/*==================================================
-    AVATARS
-==================================================*/
-
-.avatar_c19a55{
-    margin-top:2px;
-    margin-right:16px;
-}
-
-/*==================================================
-    USERNAME
-==================================================*/
-
-.username_f9f2ca{
-    font-size:15px;
-    font-weight:600;
-    color:var(--text-normal)!important;
-}
-
-/*==================================================
-    TIMESTAMP
-==================================================*/
-
-.timestamp_c19a55{
-    color:var(--text-faint)!important;
-    font-size:11px;
-}
-
-/*==================================================
-    MESSAGE TEXT
-==================================================*/
-
-.markup_a7e664{
-    color:var(--text-normal)!important;
-    line-height:1.35;
-}
-
-/*==================================================
-    LINKS
-==================================================*/
-
-.anchor_af404b{
-    color:#77b6ff!important;
-    text-decoration:none;
-}
-
-.anchor_af404b:hover{
-    text-decoration:underline;
-}
-
-/*==================================================
-    EDITED TAG
-==================================================*/
-
-.edited_c19a55{
-    color:var(--text-faint)!important;
-}
-
-/*==================================================
-    BOT TAG
-==================================================*/
-
-.botTagRegular_c89c9a{
-    background:var(--accent)!important;
+.wrapper__44b0c img {
     border-radius:2px!important;
 }
 
-/*==================================================
-    MESSAGE INPUT
-==================================================*/
 
-.form_f75fb0{
-    background:var(--background-secondary)!important;
-    border-top:1px solid var(--border);
-}
+/* buttons */
 
-.channelTextArea_f75fb0{
-    background:transparent!important;
-}
-
-.scrollableContainer__74017{
-    background:var(--channeltextarea)!important;
-    border:1px solid var(--border)!important;
-    min-height:44px;
-}
-
-.editor__1b31f{
-    color:var(--text-normal)!important;
-}
-
-.placeholder__1b31f{
-    color:var(--text-faint)!important;
-}
-
-/*==================================================
-    ATTACH BUTTONS
-==================================================*/
-
-.attachButton__0923f,
-.buttonContainer_e6e74f button{
-    color:var(--text-muted)!important;
-}
-
-.attachButton__0923f:hover,
-.buttonContainer_e6e74f button:hover{
-    color:white!important;
-}
-
-/*==================================================
-    REPLY PREVIEW
-==================================================*/
-
-.replyBar__841c8{
-    background:var(--background-secondary-alt)!important;
-    border-bottom:1px solid var(--border);
-}
-
-/*==================================================
-    REPLY LINES
-==================================================*/
-
-.repliedMessage_e2bf4a:before{
-    border-color:var(--border)!important;
-}
-
-/*==================================================
-    EMBEDS
-==================================================*/
-
-.embedFull__623de{
-    background:var(--background-secondary)!important;
-    border:1px solid var(--border)!important;
-}
-
-.embedTitle__623de{
-    color:var(--text-normal)!important;
-}
-
-.embedDescription__623de{
-    color:var(--text-muted)!important;
-}
-
-/*==================================================
-    CODE BLOCKS
-==================================================*/
-
-code{
-    background:#383d32!important;
-    border:1px solid var(--border);
-}
-
-pre{
-    background:#383d32!important;
-    border:1px solid var(--border)!important;
-}
-
-/*==================================================
-    BLOCKQUOTE
-==================================================*/
-
-.blockquoteContainer__75297{
-    border-left:3px solid var(--accent)!important;
-}
-
-/*==================================================
-    REACTIONS
-==================================================*/
-
-.reaction__23977{
-    background:var(--background-secondary)!important;
-    border:1px solid var(--border)!important;
-    border-radius:2px!important;
-}
-
-.reaction__23977:hover{
-    background:var(--hover)!important;
-}
-
-.reactionMe__23977{
-    background:#5b623e!important;
-    border-color:var(--accent)!important;
-}
-
-/*==================================================
-    MENTIONS
-==================================================*/
-
-.wrapper_f61d60{
-    background:rgba(155,144,56,.22)!important;
-    color:#efe7a8!important;
-}
-
-.wrapper_f61d60:hover{
-    background:rgba(155,144,56,.36)!important;
-}
-
-/*==================================================
-    SPOILERS
-==================================================*/
-
-.spoilerContent__54ab5{
-    background:#2d3128!important;
-}
-
-.spoilerContent__54ab5:hover{
-    background:#42473a!important;
-}
-
-/*==================================================
-    ATTACHMENTS
-==================================================*/
-
-.attachment__06ca5{
-    background:var(--background-secondary)!important;
-    border:1px solid var(--border)!important;
-}
-
-/*==================================================
-    IMAGE PREVIEWS
-==================================================*/
-
-.imageWrapper_af017a{
-    border:1px solid var(--border)!important;
-}
-
-/*==================================================
-    FILES
-==================================================*/
-
-.fileWrapper__0ccae{
-    background:var(--background-secondary)!important;
-    border:1px solid var(--border)!important;
-}
-
-/*==================================================
-    THREAD BAR
-==================================================*/
-
-.container__01ae2{
-    background:var(--background-secondary)!important;
-    border-left:1px solid var(--border);
-}
-
-/*==================================================
-    NEW MESSAGE BAR
-==================================================*/
-
-.newMessagesBar__0f481{
-    background:var(--accent)!important;
+button {
     border-radius:0!important;
+    border:1px solid rgba(255,255,255,.08);
 }
 
-/*==================================================
-    JUMP TO PRESENT
-==================================================*/
 
-.barButtonAlt__0f481{
-    background:var(--background-secondary)!important;
-    border:1px solid var(--border);
-}
-
-/*==================================================
-    DATE DIVIDER
-==================================================*/
-
-.divider__5126c{
-    border-color:rgba(255,255,255,.08)!important;
-}
-
-.content__908e2{
-    background:var(--background-primary)!important;
-    color:var(--text-muted)!important;
-}
-
-/*==================================================
-    TYPING INDICATOR
-==================================================*/
-
-.typing_b88801{
-    background:var(--background-secondary)!important;
-    border-top:1px solid var(--border);
-}
-
-/*==================================================
-    LOADING
-==================================================*/
-
-.spinner__0b9fc{
-    color:var(--accent)!important;
-}
-/*==================================================
-    PART 3
-    MEMBERS • USER PANEL • VOICE • PROFILE POPOUTS
-==================================================*/
-
-/*==================================================
-    MEMBER LIST
-==================================================*/
-
-.membersWrap_c8ffbb{
-    min-width:240px;
-}
-
-.membersGroup_c8ffbb{
-    padding:16px 8px 6px;
-    color:var(--text-faint)!important;
-    font-size:11px;
-    font-weight:700;
-    text-transform:uppercase;
-    letter-spacing:.6px;
-}
-
-.member_c8ffbb{
-    margin:0 6px;
-    padding:3px 6px;
-    border-radius:0!important;
-    transition:background .08s linear;
-}
-
-.member_c8ffbb:hover{
-    background:var(--hover)!important;
-}
-
-.selected__91a9d,
-.selected__91a9d:hover{
-    background:var(--active)!important;
-}
-
-.layout__91a9d{
-    border-radius:0!important;
-    min-height:42px;
-}
-
-.avatar__91a9d{
-    border-radius:2px!important;
-}
-
-.name__91a9d{
-    color:var(--text-normal)!important;
-    font-size:14px;
-}
-
-.activity__91a9d,
-.subText__91a9d{
-    color:var(--text-muted)!important;
-    font-size:12px;
-}
-
-/*==================================================
-    USER PANEL
-==================================================*/
-
-.panels_c48ade{
-    height:52px;
-}
-
-.container__37e49{
-    background:var(--background-secondary-alt)!important;
-}
-
-.container__37e49:hover{
-    background:var(--hover)!important;
-}
-
-.nameTag__37e49{
-    margin-left:8px;
-}
-
-.name__37e49{
-    color:var(--text-normal)!important;
-    font-weight:600;
-}
-
-.subtext__339d0{
-    color:var(--text-muted)!important;
-}
-
-/*==================================================
-    USER PANEL BUTTONS
-==================================================*/
-
-.button__67645{
-    border-radius:0!important;
-    width:32px;
-    height:32px;
-}
-
-.button__67645:hover{
-    background:var(--hover)!important;
-}
-
-/*==================================================
-    VOICE CHANNELS
-==================================================*/
-
-.iconContainer__2ea32{
-    color:var(--text-muted)!important;
-}
-
-.modeConnected__2ea32 .link__2ea32{
-    background:rgba(92,217,103,.18)!important;
-}
-
-.modeConnected__2ea32 .icon__2ea32{
-    color:var(--green)!important;
-}
-
-.modeMuted__2ea32{
-    opacity:.7;
-}
-
-.modeLocked__2ea32{
-    opacity:.55;
-}
-
-/*==================================================
-    SPEAKING USERS
-==================================================*/
-
-.border__2f4f7.speaking__2f4f7{
-    box-shadow:inset 0 0 0 1px var(--green)!important;
-}
-
-.avatarSpeaking__44b0c{
-    box-shadow:0 0 0 1px var(--green)!important;
-}
-
-/*==================================================
-    VOICE PANEL
-==================================================*/
-
-.wrapper__0d616{
-    background:var(--background-secondary)!important;
-    border-top:1px solid var(--border);
-}
-
-.connection__0d616{
-    background:transparent!important;
-}
-
-/*==================================================
-    STREAM / SCREEN SHARE
-==================================================*/
-
-.callContainer_cb9592{
-    background:var(--background-primary)!important;
-}
-
-.videoControls_cb9592{
-    background:rgba(45,50,39,.92)!important;
-}
-
-/*==================================================
-    PROFILE POPOUT
-==================================================*/
-
-.userPopoutOuter_c69a7b{
-    background:var(--background-secondary)!important;
-    border:1px solid var(--border)!important;
-}
-
-.userPopoutInner_c69a7b{
-    background:transparent!important;
-}
-
-.banner__68edb{
-    filter:saturate(.8);
-}
-
-.avatar__75742{
-    border-radius:2px!important;
-}
-
-.nickname__63ed3{
-    color:var(--text-normal)!important;
-}
-
-.usernameRow__63ed3{
-    color:var(--text-muted)!important;
-}
-
-/*==================================================
-    PROFILE SECTIONS
-==================================================*/
-
-.section__6f61e{
-    border-top:1px solid rgba(255,255,255,.06)!important;
-    padding-top:12px;
-}
-
-.section__6f61e:first-child{
-    border-top:none!important;
-}
-
-/*==================================================
-    ROLE PILLS
-==================================================*/
-
-.role_dfa8b6{
-    background:#505646!important;
-    border:1px solid var(--border)!important;
-    border-radius:2px!important;
-    color:var(--text-normal)!important;
-    padding:3px 8px;
-    margin:3px;
-}
-
-.roleCircle__4f569{
-    display:none!important;
-}
-
-.addButton__29444{
-    border-radius:0!important;
-}
-
-/*==================================================
-    CUSTOM STATUS
-==================================================*/
-
-.customStatus__3aa7f{
-    color:var(--text-muted)!important;
-}
-
-/*==================================================
-    ACTIVITY CARDS
-==================================================*/
-
-.activity__5d473{
-    background:var(--background-secondary-alt)!important;
-    border:1px solid var(--border);
-}
-
-/*==================================================
-    NOTE BOX
-==================================================*/
-
-.note__7e549 textarea{
-    background:var(--background-tertiary)!important;
-    border:1px solid var(--border)!important;
-    color:var(--text-normal)!important;
-}
-
-/*==================================================
-    MUTUAL SERVERS / FRIENDS
-==================================================*/
-
-.listRow__9d78f:hover{
-    background:var(--hover)!important;
-}
-
-.listRow__9d78f{
-    border-radius:0!important;
-}
-
-/*==================================================
-    STATUS COLORS
-==================================================*/
-
-rect[fill="#23A55A"]{
-    fill:var(--green)!important;
-}
-
-rect[fill="#F0B232"]{
-    fill:var(--yellow)!important;
-}
-
-rect[fill="#F23F43"]{
-    fill:var(--red)!important;
-}
-
-/*==================================================
-    BADGES
-==================================================*/
-
-.profileBadge__63ed3{
-    filter:saturate(.9);
-}
-
-/*==================================================
-    USER PROFILE MODAL
-==================================================*/
-
-.root__24502{
-    background:var(--background-secondary)!important;
-}
-
-.topSection__63ed3{
-    background:var(--background-secondary-alt)!important;
-}
-
-.body__24502{
-    background:var(--background-primary)!important;
-}
-
-/*==================================================
-    PROFILE TABS
-==================================================*/
-
-.tabBar__63ed3{
-    border-bottom:1px solid var(--border)!important;
-}
-
-.tabBarItem__63ed3{
-    border-radius:0!important;
-}
-
-.tabBarItem__63ed3:hover{
-    background:var(--hover)!important;
-}
-
-.tabBarItem__63ed3[aria-selected="true"]{
-    background:var(--accent)!important;
-    color:white!important;
-}
-
-/*==================================================
-    PROFILE BUTTONS
-==================================================*/
-
-.lookFilled__201d5{
-    border-radius:0!important;
-}
-
-.lookOutlined__201d5{
-    border-radius:0!important;
-}
-
-/*==================================================
-    END PART 3
-==================================================*/
-/* =========================================================
-   ForestClassic.theme.css
-   PART 4 — SETTINGS / FRIENDS / SEARCH / MODALS / MENUS
-   ========================================================= */
-
-
-/* Settings background */
-.standardSidebarView-E9Pc3j,
-.contentRegion-3HkfJJ {
-    background: #1d1f1b !important;
-}
-
-
-/* Settings sidebar */
-.sidebarRegionScroller-FzLwQ9 {
-    background: #181a16 !important;
-}
-
-
-.sidebar-1tnWFu .item-3XjbnG {
-    color: #9a9e91 !important;
-    border-radius: 3px !important;
-}
-
-
-.sidebar-1tnWFu .item-3XjbnG:hover {
-    background: rgba(255,255,255,.04) !important;
-    color: #d4d7c7 !important;
-}
-
-
-.sidebar-1tnWFu .item-3XjbnG.selected-g-kMVV {
-    background: #30352a !important;
-    color: #c3d18c !important;
-}
-
-
-/* Settings panels */
-.cardPrimary-3qRT__,
-.card-16VQ8C {
-    background: #20231d !important;
-    border: 1px solid #35382e !important;
-    border-radius: 3px !important;
-}
-
-
-/* Inputs */
-.input-2g-os5,
-.textarea-2rYpWZ {
-    background: #151713 !important;
-    border: 1px solid #35382e !important;
-    color: #d4d7c7 !important;
-}
-
-
-/* Buttons */
-.button-1F8Q5G {
-    border-radius: 3px !important;
-}
-
-
-.lookFilled-1Gx00P {
-    background: #59663d !important;
-}
-
-
-.lookFilled-1Gx00P:hover {
-    background: #68774a !important;
-}
-
-
-/* Friend list */
-.peopleListItem-u6dGxF {
-    border-top: 1px solid #30332b !important;
-}
-
-
-.peopleListItem-u6dGxF:hover {
-    background: rgba(255,255,255,.035) !important;
-}
-
-
-/* Search bar */
-.searchBar-3dMhjb,
-.searchBar-2M9mRP {
-    background: #151713 !important;
-    border: 1px solid #35382e !important;
-}
-
-
-.searchBarComponent-3N7dCG {
-    color: #aaaE9d !important;
-}
-
-
-/* Search results */
-.searchResultsWrap-2fvIzr {
-    background: #181a16 !important;
-    border-left: 1px solid #35382e !important;
-}
-
-
-.searchResult-O9NDji {
-    background: transparent !important;
-}
-
-
-.searchResult-O9NDji:hover {
-    background: rgba(255,255,255,.04) !important;
-}
-
-
-/* Context menus */
-.menu-1QACrS {
-    background: #181a16 !important;
-    border: 1px solid #35382e !important;
-    border-radius: 3px !important;
-}
-
-
-.item-1tOPte {
-    color: #c8c9bc !important;
-}
-
-
-.item-1tOPte:hover {
-    background: #30352a !important;
-    color: #d9dfbd !important;
-}
-
-
-/* Popouts */
-.popout-2sKjHu,
-.container-2O1UgZ {
-    background: #181a16 !important;
-    border: 1px solid #35382e !important;
-    border-radius: 3px !important;
-}
-
-
-/* Modals */
-.modal-3c3bKg {
-    background: #20231d !important;
-    border: 1px solid #454a38 !important;
-    border-radius: 4px !important;
-}
-
-
-.header-1TKi98 {
-    color: #d7dbc9 !important;
-}
-
-
-/* Confirm dialogs */
-.root-1gCeng {
-    background: #20231d !important;
-    border: 1px solid #35382e !important;
-}
-
-
-/* Tooltips */
-.tooltip-14MtrL {
-    background: #11130f !important;
-    border: 1px solid #35382e !important;
-    color: #d4d7c7 !important;
-}
-/* =========================================================
-   ForestClassic.theme.css
-   PART 5 — FINAL POLISH / ANIMATIONS / GLOBAL FIXES
-   ========================================================= */
-
-
-/* ---------------------------------------------------------
-   GLOBAL CLASSIC FEEL
-   --------------------------------------------------------- */
-
-* {
-    scrollbar-width: thin;
-    scrollbar-color: #3b4032 transparent;
-}
-
-
-body {
-    font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-}
-
-
-/* Remove overly modern rounded UI */
-[class*="rounded"],
-[class*="borderRadius"] {
-    border-radius: 3px !important;
-}
-
-
-/* Thin classic borders */
-[class*="container"],
-[class*="wrapper"] {
-    border-color: #30332b;
-}
-
-
-
-/* ---------------------------------------------------------
-   SCROLLBARS
-   --------------------------------------------------------- */
+/* scrollbars */
 
 ::-webkit-scrollbar {
-    width: 8px !important;
-    height: 8px !important;
+    width:8px;
 }
 
 
 ::-webkit-scrollbar-track {
-    background: transparent !important;
+    background:var(--fc-bg-side);
 }
 
 
 ::-webkit-scrollbar-thumb {
-    background: #3b4032 !important;
-    border-radius: 2px !important;
+    background:#70785f;
+    border:2px solid var(--fc-bg-side);
+}
+/* messages */
+
+.scrollerContent__36d07 {
+    background:var(--fc-bg-main)!important;
 }
 
 
-::-webkit-scrollbar-thumb:hover {
-    background: #596344 !important;
+.message__5126c {
+    padding:3px 18px;
+    margin:0;
 }
 
 
-
-/* ---------------------------------------------------------
-   OLD DISCORD STYLE ANIMATIONS
-   --------------------------------------------------------- */
-
-[class*="hover"],
-[class*="item"],
-button,
-.clickable {
-    transition:
-        background-color .12s ease,
-        color .12s ease,
-        opacity .12s ease !important;
+.message__5126c:hover {
+    background:rgba(255,255,255,.025)!important;
 }
 
 
-/* Remove newer bouncy transitions */
-* {
-    animation-duration: .12s !important;
+.cozy_f5c119.wrapper_c19a55 {
+    padding-top:4px;
+    padding-bottom:4px;
 }
 
 
-
-/* ---------------------------------------------------------
-   SERVER ICON AREA
-   --------------------------------------------------------- */
-
-.wrapper-3kah-n {
-    border-radius: 4px !important;
+.avatar_c19a55 {
+    margin-right:16px;
+    margin-top:2px;
 }
 
 
-.wrapper-3kah-n foreignObject {
-    mask: none !important;
+/* usernames */
+
+.username_f9f2ca {
+    color:var(--fc-text)!important;
+    font-size:15px;
+    font-weight:600;
 }
 
 
-.wrapper-3kah-n img {
-    border-radius: 4px !important;
+.timestamp_c19a55 {
+    color:var(--fc-faint)!important;
+    font-size:11px;
 }
 
 
-.wrapper-3kah-n:hover {
-    transform: none !important;
+/* message text */
+
+.markup_a7e664 {
+    color:var(--fc-text)!important;
+    line-height:1.4;
 }
 
 
-
-/* ---------------------------------------------------------
-   OPTIONAL SQUARE AVATARS
-   --------------------------------------------------------- */
-
-.avatar-2e8lTP,
-.avatar-1BDn8e,
-.avatar-3QF_VA {
-    border-radius: 4px !important;
+.markup_a7e664 strong {
+    color:#ffffff!important;
 }
 
 
-.userAvatar-3Hna7Y {
-    border-radius: 4px !important;
+/* links */
+
+.anchor_af404b {
+    color:#77b6ff!important;
 }
 
 
-
-/* ---------------------------------------------------------
-   ROLE BADGES
-   --------------------------------------------------------- */
-
-.role-2TIOKu {
-    border-radius: 2px !important;
-    border: 1px solid rgba(255,255,255,.12) !important;
-    padding: 2px 5px !important;
+.anchor_af404b:hover {
+    text-decoration:underline;
 }
 
 
-.roleCircle-1EgnFN {
-    border-radius: 50% !important;
+/* edited text */
+
+.edited_c19a55 {
+    color:var(--fc-faint)!important;
 }
 
 
+/* bot tags */
 
-/* ---------------------------------------------------------
-   USER PANEL
-   --------------------------------------------------------- */
-
-.panels-3wFtMD {
-    background: #181a16 !important;
-    border-top: 1px solid #35382e !important;
+.botTagRegular_c89c9a {
+    background:var(--fc-accent)!important;
+    color:white!important;
+    border-radius:2px!important;
 }
 
 
-.container-YkUktl {
-    background: #181a16 !important;
+/* mentions */
+
+.wrapper_f61d60 {
+    background:rgba(155,144,56,.22)!important;
+    color:#efe7a8!important;
 }
 
 
-.avatarWrapper-1B9FTW img {
-    border-radius: 4px !important;
+.wrapper_f61d60:hover {
+    background:rgba(155,144,56,.35)!important;
 }
 
 
+/* reply system */
 
-/* ---------------------------------------------------------
-   VOICE PANEL
-   --------------------------------------------------------- */
-
-.container-1giJp5 {
-    background: #181a16 !important;
-    border-top: 1px solid #35382e !important;
+.replyBar__841c8 {
+    background:var(--fc-panel)!important;
+    border-bottom:1px solid var(--fc-border);
 }
 
 
-.avatarSpeaking-2IGMRN {
-    box-shadow: 0 0 0 2px #788c50 !important;
+.repliedMessage_e2bf4a:before {
+    border-color:var(--fc-border)!important;
 }
 
 
-
-/* ---------------------------------------------------------
-   MEMBER LIST POLISH
-   --------------------------------------------------------- */
-
-.members-3WRCEx {
-    background: #181a16 !important;
-}
-
-
-.member-2gU6Ar {
-    margin: 1px 4px !important;
-    border-radius: 3px !important;
-}
-
-
-.member-2gU6Ar:hover {
-    background: rgba(255,255,255,.035) !important;
-}
-
-
-
-/* ---------------------------------------------------------
-   MESSAGE HOVER ACTIONS
-   --------------------------------------------------------- */
+/* message actions */
 
 .wrapper-2vIMkT {
-    background: #20231d !important;
-    border: 1px solid #35382e !important;
+    background:var(--fc-panel)!important;
+    border:1px solid var(--fc-border)!important;
 }
 
 
 .wrapper-2vIMkT button:hover {
-    background: #30352a !important;
+    background:var(--fc-hover)!important;
 }
 
 
+/* input area */
 
-/* ---------------------------------------------------------
-   EMOJI PICKER
-   --------------------------------------------------------- */
+.form_f75fb0 {
+    background:var(--fc-bg-side)!important;
+    border-top:1px solid var(--fc-border);
+}
+
+
+.channelTextArea_f75fb0 {
+    background:transparent!important;
+}
+
+
+.scrollableContainer__74017 {
+    background:#46503d!important;
+    border:1px solid var(--fc-border)!important;
+    min-height:44px;
+}
+
+
+.editor__1b31f {
+    color:var(--fc-text)!important;
+}
+
+
+.placeholder__1b31f {
+    color:var(--fc-faint)!important;
+}
+
+
+/* input buttons */
+
+.attachButton__0923f,
+.buttonContainer_e6e74f button {
+    color:var(--fc-muted)!important;
+}
+
+
+.attachButton__0923f:hover,
+.buttonContainer_e6e74f button:hover {
+    color:white!important;
+}
+
+
+/* embeds */
+
+.embedFull__623de {
+    background:var(--fc-bg-side)!important;
+    border:1px solid var(--fc-border)!important;
+}
+
+
+.embedTitle__623de {
+    color:var(--fc-text)!important;
+}
+
+
+.embedDescription__623de {
+    color:var(--fc-muted)!important;
+}
+
+
+/* files */
+
+.attachment__06ca5,
+.fileWrapper__0ccae {
+    background:var(--fc-bg-side)!important;
+    border:1px solid var(--fc-border)!important;
+}
+
+
+/* images */
+
+.imageWrapper_af017a {
+    border:1px solid var(--fc-border)!important;
+}
+
+
+/* code blocks */
+
+code {
+    background:#383d32!important;
+    border:1px solid var(--fc-border);
+}
+
+
+pre {
+    background:#383d32!important;
+    border:1px solid var(--fc-border)!important;
+}
+
+
+/* blockquotes */
+
+.blockquoteContainer__75297 {
+    border-left:3px solid var(--fc-accent)!important;
+}
+
+
+/* reactions */
+
+.reaction__23977 {
+    background:var(--fc-bg-side)!important;
+    border:1px solid var(--fc-border)!important;
+    border-radius:2px!important;
+}
+
+
+.reaction__23977:hover {
+    background:var(--fc-hover)!important;
+}
+
+
+.reactionMe__23977 {
+    background:#5b623e!important;
+    border-color:var(--fc-accent)!important;
+}
+
+
+/* spoilers */
+
+.spoilerContent__54ab5 {
+    background:#2d3128!important;
+}
+
+
+.spoilerContent__54ab5:hover {
+    background:#42473a!important;
+}
+
+
+/* date divider */
+
+.divider__5126c {
+    border-color:rgba(255,255,255,.08)!important;
+}
+
+
+.content__908e2 {
+    background:var(--fc-bg-main)!important;
+    color:var(--fc-muted)!important;
+}
+
+
+/* typing */
+
+.typing_b88801 {
+    background:var(--fc-bg-side)!important;
+    border-top:1px solid var(--fc-border);
+}
+
+
+/* new messages */
+
+.newMessagesBar__0f481 {
+    background:var(--fc-accent)!important;
+    border-radius:0!important;
+}
+
+
+.barButtonAlt__0f481 {
+    background:var(--fc-panel)!important;
+    border:1px solid var(--fc-border);
+}
+/* members */
+
+.membersWrap_c8ffbb {
+    min-width:240px;
+}
+
+
+.membersGroup_c8ffbb {
+    padding:16px 8px 6px;
+    color:var(--fc-faint)!important;
+    font-size:11px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+}
+
+
+.member_c8ffbb {
+    margin:0 6px;
+    padding:3px 6px;
+}
+
+
+.member_c8ffbb:hover {
+    background:var(--fc-hover)!important;
+}
+
+
+.selected__91a9d,
+.selected__91a9d:hover {
+    background:var(--fc-active)!important;
+}
+
+
+.layout__91a9d {
+    min-height:42px;
+}
+
+
+.avatar__91a9d {
+    border-radius:2px!important;
+}
+
+
+.name__91a9d {
+    color:var(--fc-text)!important;
+    font-size:14px;
+}
+
+
+.activity__91a9d,
+.subText__91a9d {
+    color:var(--fc-muted)!important;
+    font-size:12px;
+}
+
+
+/* voice channels */
+
+.iconContainer__2ea32 {
+    color:var(--fc-muted)!important;
+}
+
+
+.modeConnected__2ea32 .link__2ea32 {
+    background:rgba(92,217,103,.18)!important;
+}
+
+
+.modeConnected__2ea32 .icon__2ea32 {
+    color:var(--fc-green)!important;
+}
+
+
+.modeMuted__2ea32 {
+    opacity:.7;
+}
+
+
+.modeLocked__2ea32 {
+    opacity:.55;
+}
+
+
+/* speaking */
+
+.border__2f4f7.speaking__2f4f7 {
+    box-shadow:inset 0 0 0 1px var(--fc-green)!important;
+}
+
+
+.avatarSpeaking__44b0c {
+    box-shadow:0 0 0 1px var(--fc-green)!important;
+}
+
+
+/* voice panel */
+
+.wrapper__0d616 {
+    background:var(--fc-bg-side)!important;
+    border-top:1px solid var(--fc-border);
+}
+
+
+.connection__0d616 {
+    background:transparent!important;
+}
+
+
+/* stream / calls */
+
+.callContainer_cb9592 {
+    background:var(--fc-bg-main)!important;
+}
+
+
+.videoControls_cb9592 {
+    background:rgba(45,50,39,.9)!important;
+}
+
+
+/* user panel */
+
+.container__37e49 {
+    background:var(--fc-panel)!important;
+}
+
+
+.nameTag__37e49 {
+    margin-left:8px;
+}
+
+
+.name__37e49 {
+    color:var(--fc-text)!important;
+    font-weight:600;
+}
+
+
+.subtext__339d0 {
+    color:var(--fc-muted)!important;
+}
+
+
+/* user buttons */
+
+.button__67645 {
+    width:32px;
+    height:32px;
+}
+
+
+.button__67645:hover {
+    background:var(--fc-hover)!important;
+}
+
+
+/* profile popout */
+
+.userPopoutOuter_c69a7b {
+    background:var(--fc-bg-side)!important;
+    border:1px solid var(--fc-border)!important;
+}
+
+
+.userPopoutInner_c69a7b {
+    background:transparent!important;
+}
+
+
+.banner__68edb {
+    filter:saturate(.8);
+}
+
+
+.avatar__75742 {
+    border-radius:2px!important;
+}
+
+
+.nickname__63ed3 {
+    color:var(--fc-text)!important;
+}
+
+
+.usernameRow__63ed3 {
+    color:var(--fc-muted)!important;
+}
+
+
+/* profile sections */
+
+.section__6f61e {
+    border-top:1px solid rgba(255,255,255,.06)!important;
+    padding-top:12px;
+}
+
+
+.section__6f61e:first-child {
+    border-top:0!important;
+}
+
+
+/* roles */
+
+.role_dfa8b6 {
+    background:#505646!important;
+    border:1px solid var(--fc-border)!important;
+    border-radius:2px!important;
+    color:var(--fc-text)!important;
+    padding:3px 8px;
+    margin:3px;
+}
+
+
+.roleCircle__4f569 {
+    display:none!important;
+}
+
+
+/* custom status */
+
+.customStatus__3aa7f {
+    color:var(--fc-muted)!important;
+}
+
+
+/* activity */
+
+.activity__5d473 {
+    background:var(--fc-panel)!important;
+    border:1px solid var(--fc-border);
+}
+
+
+/* notes */
+
+.note__7e549 textarea {
+    background:var(--fc-bg-dark)!important;
+    border:1px solid var(--fc-border)!important;
+    color:var(--fc-text)!important;
+}
+
+
+/* mutual servers/friends */
+
+.listRow__9d78f {
+    border-radius:0!important;
+}
+
+
+.listRow__9d78f:hover {
+    background:var(--fc-hover)!important;
+}
+
+
+/* status colors */
+
+rect[fill="#23A55A"] {
+    fill:var(--fc-green)!important;
+}
+
+
+rect[fill="#F0B232"] {
+    fill:var(--fc-yellow)!important;
+}
+
+
+rect[fill="#F23F43"] {
+    fill:var(--fc-red)!important;
+}
+/* settings */
+
+.standardSidebarView-E9Pc3j,
+.contentRegion-3HkfJJ {
+    background:var(--fc-bg-main)!important;
+}
+
+
+.sidebarRegionScroller-FzLwQ9 {
+    background:var(--fc-bg-dark)!important;
+}
+
+
+/* settings sidebar */
+
+.sidebar-1tnWFu .item-3XjbnG {
+    color:var(--fc-muted)!important;
+    border-radius:3px!important;
+}
+
+
+.sidebar-1tnWFu .item-3XjbnG:hover {
+    background:var(--fc-hover)!important;
+    color:var(--fc-text)!important;
+}
+
+
+.sidebar-1tnWFu .item-3XjbnG.selected-g-kMVV {
+    background:var(--fc-active)!important;
+    color:#d9dfbd!important;
+}
+
+
+/* settings cards */
+
+.cardPrimary-3qRT__,
+.card-16VQ8C {
+    background:var(--fc-panel)!important;
+    border:1px solid var(--fc-border)!important;
+    border-radius:3px!important;
+}
+
+
+/* inputs */
+
+.input-2g-os5,
+.textarea-2rYpWZ {
+    background:var(--fc-bg-dark)!important;
+    border:1px solid var(--fc-border)!important;
+    color:var(--fc-text)!important;
+}
+
+
+/* settings buttons */
+
+.button-1F8Q5G {
+    border-radius:3px!important;
+}
+
+
+.lookFilled-1Gx00P {
+    background:var(--fc-accent)!important;
+}
+
+
+.lookFilled-1Gx00P:hover {
+    background:var(--fc-accent-hover)!important;
+}
+
+
+/* friends page */
+
+.peopleListItem-u6dGxF {
+    border-top:1px solid rgba(255,255,255,.06)!important;
+}
+
+
+.peopleListItem-u6dGxF:hover {
+    background:var(--fc-hover)!important;
+}
+
+
+/* search */
+
+.searchBar-3dMhjb,
+.searchBar-2M9mRP {
+    background:var(--fc-bg-dark)!important;
+    border:1px solid var(--fc-border)!important;
+}
+
+
+.searchBarComponent-3N7dCG {
+    color:var(--fc-muted)!important;
+}
+
+
+/* search results */
+
+.searchResultsWrap-2fvIzr {
+    background:var(--fc-bg-dark)!important;
+    border-left:1px solid var(--fc-border)!important;
+}
+
+
+.searchResult-O9NDji:hover {
+    background:var(--fc-hover)!important;
+}
+
+
+/* menus */
+
+.menu-1QACrS {
+    background:var(--fc-bg-dark)!important;
+    border:1px solid var(--fc-border)!important;
+    border-radius:3px!important;
+}
+
+
+.item-1tOPte {
+    color:var(--fc-text)!important;
+}
+
+
+.item-1tOPte:hover {
+    background:var(--fc-active)!important;
+}
+
+
+/* generic popouts */
+
+.popout-2sKjHu,
+.container-2O1UgZ {
+    background:var(--fc-bg-dark)!important;
+    border:1px solid var(--fc-border)!important;
+    border-radius:3px!important;
+}
+
+
+/* emoji picker */
 
 .contentWrapper-SvZHNd {
-    background: #181a16 !important;
-    border: 1px solid #35382e !important;
+    background:var(--fc-bg-dark)!important;
+    border:1px solid var(--fc-border)!important;
 }
 
 
 .emojiItem-277VFM:hover {
-    background: #30352a !important;
+    background:var(--fc-active)!important;
 }
 
 
-
-/* ---------------------------------------------------------
-   AUTOCOMPLETE / MENTIONS
-   --------------------------------------------------------- */
+/* autocomplete */
 
 .autocomplete-3NRXG8 {
-    background: #181a16 !important;
-    border: 1px solid #35382e !important;
+    background:var(--fc-bg-dark)!important;
+    border:1px solid var(--fc-border)!important;
 }
 
 
 .selected-3H3-RC {
-    background: #30352a !important;
+    background:var(--fc-active)!important;
 }
 
 
+/* modals */
 
-/* ---------------------------------------------------------
-   TOP BAR
-   --------------------------------------------------------- */
-
-.title-31SJ6t {
-    background: #181a16 !important;
-    border-bottom: 1px solid #35382e !important;
+.modal-3c3bKg {
+    background:var(--fc-panel)!important;
+    border:1px solid var(--fc-border)!important;
+    border-radius:4px!important;
 }
 
 
-.topic-11NuQZ {
-    color: #858a7c !important;
+.header-1TKi98 {
+    color:var(--fc-text)!important;
 }
 
 
+.root-1gCeng {
+    background:var(--fc-panel)!important;
+    border:1px solid var(--fc-border)!important;
+}
 
-/* ---------------------------------------------------------
-   DISABLE MODERN GLOW EFFECTS
-   --------------------------------------------------------- */
+
+/* tooltips */
+
+.tooltip-14MtrL {
+    background:#11130f!important;
+    border:1px solid var(--fc-border)!important;
+    color:var(--fc-text)!important;
+}
+/* final cleanup */
+
+
+/* unread markers */
+
+.unread__2ea32 {
+    background:var(--fc-accent)!important;
+    width:3px!important;
+    border-radius:0!important;
+}
+
+
+.bar__2ea32 {
+    background:var(--fc-accent)!important;
+}
+
+
+/* mention badge */
+
+.numberBadge__40d59 {
+    background:var(--fc-red)!important;
+    border-radius:2px!important;
+}
+
+
+/* server unread */
+
+.unreadPill__3bcff {
+    background:var(--fc-accent)!important;
+    border-radius:2px!important;
+}
+
+
+/* hover states */
+
+.clickable__91a9d:hover,
+.clickable__9293f:hover {
+    background:var(--fc-hover)!important;
+}
+
+
+/* selected items */
+
+.selected__91a9d {
+    background:var(--fc-active)!important;
+}
+
+
+/* profile badges */
+
+.profileBadge__63ed3 {
+    filter:saturate(.85);
+}
+
+
+/* tabs */
+
+.tabBar__63ed3 {
+    border-bottom:1px solid var(--fc-border)!important;
+}
+
+
+.tabBarItem__63ed3 {
+    border-radius:0!important;
+}
+
+
+.tabBarItem__63ed3:hover {
+    background:var(--fc-hover)!important;
+}
+
+
+.tabBarItem__63ed3[aria-selected="true"] {
+    background:var(--fc-accent)!important;
+    color:white!important;
+}
+
+
+/* profile buttons */
+
+.lookFilled__201d5,
+.lookOutlined__201d5 {
+    border-radius:0!important;
+}
+
+
+/* voice speaking animation */
+
+.avatarSpeaking__44b0c {
+    animation:none!important;
+}
+
+
+/* remove modern glow effects */
 
 [class*="shine"],
 [class*="pulse"],
 [class*="glow"] {
-    animation: none !important;
+    animation:none!important;
 }
 
 
+/* simple transitions */
 
-/* ---------------------------------------------------------
-   FINAL COLOR BALANCE
-   --------------------------------------------------------- */
+button,
+.clickable,
+[class*="item"],
+[class*="button"] {
+    transition:
+        background-color .12s ease,
+        color .12s ease,
+        opacity .12s ease!important;
+}
+
+
+/* text colors */
+
+.colorStandard__5345c {
+    color:var(--fc-text)!important;
+}
+
+
+.colorHeaderSecondary__8c518,
+.colorMuted__5345c,
+.subtext__339d0 {
+    color:var(--fc-muted)!important;
+}
+
+
+/* status colors */
+
+[mask*=online] {
+    color:var(--fc-green)!important;
+}
+
+
+[mask*=idle] {
+    color:var(--fc-yellow)!important;
+}
+
+
+[mask*=dnd] {
+    color:var(--fc-red)!important;
+}
+
+
+/* selection */
 
 ::selection {
-    background: #59663d !important;
-    color: #ffffff !important;
+    background:var(--fc-accent)!important;
+    color:white!important;
 }
 
+
+/* scrollbar firefox */
+
+* {
+    scrollbar-width:thin;
+    scrollbar-color:#70785f transparent;
+}
+
+
+/* stop modern rounded containers */
+
+[class*="container"],
+[class*="wrapper"],
+[class*="popout"] {
+    border-radius:3px;
+}
+
+
+/* old discord style spacing */
+
+[class*="message"] {
+    --message-spacing:3px;
+}
+
+
+/* reduce modern animations */
+
+* {
+    animation-duration:.12s!important;
+}
+
+
+/* final colors */
 
 strong {
-    color: #e0e2d2;
+    color:#e0e2d2;
 }
 
 
-h1,h2,h3 {
-    color: #d9dccb !important;
+h1,
+h2,
+h3 {
+    color:#d9dccb!important;
+}
+
+
+/* compatibility leftovers
+   discord changes class names often,
+   these keep older layouts close */
+
+[class*="avatar"] img {
+    border-radius:2px!important;
+}
+
+
+[class*="role"] {
+    border-radius:2px!important;
+}
+
+
+[class*="tooltip"] {
+    border-radius:3px!important;
 }
